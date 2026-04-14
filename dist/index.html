@@ -320,15 +320,17 @@
     </div>
 
     <!-- FLOATING CHAI4ME BUTTON -->
-    <div class="fixed bottom-6 left-4 z-50 w-[130px] md:w-[150px]">
-        <!-- <a href="https://chai4.me/hari" target="_blank" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
+    <!-- <div class="fixed bottom-6 left-4 z-50 w-[130px] md:w-[150px]">
+        <a href="https://chai4.me/hari" target="_blank" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
             <img src="https://chai4.me/icons/wordmark.png" alt="Chai4Me" class="h-4 md:h-5 object-contain group-hover:scale-110 transition-transform shrink-0"/>
             <span class="text-arcade-dark text-center leading-tight text-[10px] md:text-[11px]" data-i18n="float_chai">Enjoying? Support with a tea ☕</span>
-        </a> -->
-        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=49&cu=INR&tn=Support+Skill+Shapes" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
-            <span class="text-lg">☕</span>
-            <span class="text-arcade-dark text-center leading-tight text-[10px] md:text-[11px]" data-i18n="float_chai">Enjoying? Support with a tea ☕</span>
         </a>
+    </div> -->
+    <div class="fixed bottom-6 left-4 z-50 w-[130px] md:w-[150px]">
+        <button onclick="openChaiPopup()" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px] w-full">
+            <span class="text-xl group-hover:scale-110 transition-transform">☕</span>
+            <span class="text-arcade-dark text-center leading-tight text-[10px] md:text-[11px]" data-i18n="float_chai">Enjoying? Support with a tea ☕</span>
+        </button>
     </div>
     
 
@@ -1190,15 +1192,11 @@
                     <img src="https://chai4.me/icons/wordmark.png" alt="Chai4Me" class="h-6 object-contain mb-2"/>
                     <span class="text-arcade-dark font-black text-xs md:text-sm text-center leading-relaxed" data-i18n="footer_chai_long">If you found this guide useful,<br/>support the creator with a tea ☕</span>
                 </a> -->
-                <div class="arcade-btn bg-[#F8FAFC] px-6 py-4 rounded-xl flex flex-col items-center justify-center w-full">
-                    <span class="text-2xl mb-2">☕</span>
-                    <span class="text-arcade-dark font-black text-xs md:text-sm text-center leading-relaxed mb-3" data-i18n="footer_chai_long">If you found this guide useful,<br/>support the creator with a tea ☕</span>
-                    <div class="flex gap-2 flex-wrap justify-center">
-                        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=49&cu=INR&tn=Support+Skill+Shapes" class="arcade-btn bg-arcade-yellow text-arcade-dark px-3 py-1.5 rounded-lg text-xs">₹49 ☕</a>
-                        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=99&cu=INR&tn=Support+Skill+Shapes" class="arcade-btn bg-arcade-yellow text-arcade-dark px-3 py-1.5 rounded-lg text-xs">₹99 ☕☕</a>
-                        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=149&cu=INR&tn=Support+Skill+Shapes" class="arcade-btn bg-arcade-yellow text-arcade-dark px-3 py-1.5 rounded-lg text-xs">₹149 ☕☕☕</a>
-                    </div>
-                </div>
+                <!-- FOOTER CHAI WIDGET -->
+                <button onclick="openChaiPopup()" class="arcade-btn bg-[#F8FAFC] px-6 py-4 rounded-xl flex flex-col items-center justify-center hover:-translate-y-1 w-full">
+                    <span class="text-3xl mb-2">☕</span>
+                    <span class="text-arcade-dark font-black text-xs md:text-sm text-center leading-relaxed" data-i18n="footer_chai_long">If you found this guide useful,<br/>support the creator with a tea ☕</span>
+                </button>
 
             <!-- Visitor Counter -->
             <div class="flex flex-col items-center mt-2 mb-8 z-10">
@@ -1772,6 +1770,90 @@
         } else {
             setLang('en');
         }
+    </script>
+    <!-- CHAI POPUP -->
+    <div id="chai-overlay" style="display:none" onclick="handleChaiOverlay(event)"
+        class="fixed inset-0 z-[9998] flex items-center justify-center p-4 bg-arcade-dark bg-opacity-75 transition-opacity duration-200 opacity-0">
+    <div id="chai-popup"
+        class="relative bg-white border-4 border-arcade-dark shadow-[8px_8px_0px_#0F172A] rounded-2xl w-full max-w-sm p-5 md:p-6 transition-all duration-300 opacity-0 translate-y-6 scale-95">
+
+        <button onclick="closeChaiPopup()"
+                class="absolute top-3 right-3 w-7 h-7 bg-arcade-dark text-white font-black rounded-lg hover:bg-arcade-red hover:text-arcade-dark flex items-center justify-center text-sm leading-none">✕</button>
+
+        <span class="inline-block bg-arcade-yellow border-2 border-arcade-dark rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-widest text-arcade-dark mb-2">Support the creator</span>
+        <h2 class="font-black text-lg text-arcade-dark mb-4 leading-snug">Buy me a Tea ☕</h2>
+
+        <div class="grid grid-cols-3 gap-2 mb-2">
+        <button onclick="chaiPay(25)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
+            <span class="text-xl">🍵</span>
+            <span class="text-[10px] uppercase tracking-tight text-arcade-dark">Tea</span>
+            <span class="text-base text-arcade-dark">₹25</span>
+        </button>
+        <button onclick="chaiPay(50)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
+            <span class="text-xl">🫚</span>
+            <span class="text-[10px] uppercase tracking-tight text-arcade-dark">Ginger</span>
+            <span class="text-base text-arcade-dark">₹50</span>
+        </button>
+        <button onclick="chaiPay(75)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
+            <span class="text-xl">🌶️</span>
+            <span class="text-[10px] uppercase tracking-tight text-arcade-dark">Masala</span>
+            <span class="text-base text-arcade-dark">₹75</span>
+        </button>
+        </div>
+
+        <div class="flex items-center gap-2 border-[3px] border-arcade-dark rounded-xl px-3 py-1 shadow-[4px_4px_0_#0F172A] bg-white">
+        <span class="font-black text-arcade-dark text-sm">₹</span>
+        <input id="chai-custom-val" type="number" min="1" placeholder="Special tea ✨"
+                oninput="chaiCustomInput()"
+                class="flex-1 border-none outline-none font-black text-arcade-dark text-sm bg-transparent py-2 placeholder:text-slate-300 placeholder:font-bold min-w-0">
+        <button id="chai-custom-btn" onclick="chaiPayCustom()" disabled
+                class="bg-arcade-dark text-arcade-yellow border-none rounded-lg px-3 py-1.5 font-black text-[10px] uppercase tracking-widest cursor-pointer opacity-35 disabled:cursor-not-allowed transition-opacity">Pay ✨</button>
+        </div>
+
+        <p class="text-center text-[10px] font-bold text-slate-400 mt-3 leading-relaxed">
+        Tap any tea to pay instantly · GPay · PhonePe · Paytm<br>
+        <span class="inline-flex items-center gap-1 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-0.5 mt-1 text-slate-500 text-[9px] uppercase tracking-wide">🔒 9840805248@okbizaxis</span>
+        </p>
+    </div>
+    </div>
+
+    <script>
+    (function(){
+    var UPI='9840805248@okbizaxis';
+    window.openChaiPopup=function(){
+        var o=document.getElementById('chai-overlay');
+        o.style.display='flex';
+        setTimeout(function(){
+        o.classList.remove('opacity-0');
+        var p=document.getElementById('chai-popup');
+        p.classList.remove('opacity-0','translate-y-6','scale-95');
+        },10);
+    };
+    window.closeChaiPopup=function(){
+        var o=document.getElementById('chai-overlay');
+        var p=document.getElementById('chai-popup');
+        o.classList.add('opacity-0');
+        p.classList.add('opacity-0','translate-y-6','scale-95');
+        setTimeout(function(){o.style.display='none';},300);
+    };
+    window.handleChaiOverlay=function(e){
+        if(e.target===document.getElementById('chai-overlay'))closeChaiPopup();
+    };
+    window.chaiPay=function(amt){
+        window.location.href='upi://pay?pa='+UPI+'&pn=Hari+Pravin&am='+amt+'&cu=INR&tn=Support+Skill+Shapes';
+    };
+    window.chaiCustomInput=function(){
+        var v=parseInt(document.getElementById('chai-custom-val').value);
+        var btn=document.getElementById('chai-custom-btn');
+        btn.disabled=!(v>0);
+        btn.style.opacity=(v>0)?'1':'0.35';
+        btn.style.cursor=(v>0)?'pointer':'not-allowed';
+    };
+    window.chaiPayCustom=function(){
+        var v=parseInt(document.getElementById('chai-custom-val').value);
+        if(v>0)chaiPay(v);
+    };
+    })();
     </script>
 </body>
 </html>
