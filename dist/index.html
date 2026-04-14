@@ -321,11 +321,16 @@
 
     <!-- FLOATING CHAI4ME BUTTON -->
     <div class="fixed bottom-6 left-4 z-50 w-[130px] md:w-[150px]">
-        <a href="https://chai4.me/hari" target="_blank" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
+        <!-- <a href="https://chai4.me/hari" target="_blank" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
             <img src="https://chai4.me/icons/wordmark.png" alt="Chai4Me" class="h-4 md:h-5 object-contain group-hover:scale-110 transition-transform shrink-0"/>
+            <span class="text-arcade-dark text-center leading-tight text-[10px] md:text-[11px]" data-i18n="float_chai">Enjoying? Support with a tea ☕</span>
+        </a> -->
+        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=49&cu=INR&tn=Support+Skill+Shapes" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
+            <span class="text-lg">☕</span>
             <span class="text-arcade-dark text-center leading-tight text-[10px] md:text-[11px]" data-i18n="float_chai">Enjoying? Support with a tea ☕</span>
         </a>
     </div>
+    
 
     <!-- FLOATING LANGUAGE TOGGLE -->
     <div class="fixed bottom-6 right-4 md:right-6 z-50 flex bg-white border-4 border-arcade-dark rounded-full shadow-[4px_4px_0px_#0F172A] overflow-hidden p-1">
@@ -1181,11 +1186,19 @@
                 </div>
 
                 <!-- Chai4Me Widget -->
-                <a href="https://chai4.me/hari" target="_blank" title="Support hari on Chai4Me" class="arcade-btn bg-[#F8FAFC] px-6 py-4 rounded-xl flex flex-col items-center justify-center hover:-translate-y-1 w-full text-decoration-none">
+                <!-- <a href="https://chai4.me/hari" target="_blank" title="Support hari on Chai4Me" class="arcade-btn bg-[#F8FAFC] px-6 py-4 rounded-xl flex flex-col items-center justify-center hover:-translate-y-1 w-full text-decoration-none">
                     <img src="https://chai4.me/icons/wordmark.png" alt="Chai4Me" class="h-6 object-contain mb-2"/>
                     <span class="text-arcade-dark font-black text-xs md:text-sm text-center leading-relaxed" data-i18n="footer_chai_long">If you found this guide useful,<br/>support the creator with a tea ☕</span>
-                </a>
-            </div>
+                </a> -->
+                <div class="arcade-btn bg-[#F8FAFC] px-6 py-4 rounded-xl flex flex-col items-center justify-center w-full">
+                    <span class="text-2xl mb-2">☕</span>
+                    <span class="text-arcade-dark font-black text-xs md:text-sm text-center leading-relaxed mb-3" data-i18n="footer_chai_long">If you found this guide useful,<br/>support the creator with a tea ☕</span>
+                    <div class="flex gap-2 flex-wrap justify-center">
+                        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=49&cu=INR&tn=Support+Skill+Shapes" class="arcade-btn bg-arcade-yellow text-arcade-dark px-3 py-1.5 rounded-lg text-xs">₹49 ☕</a>
+                        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=99&cu=INR&tn=Support+Skill+Shapes" class="arcade-btn bg-arcade-yellow text-arcade-dark px-3 py-1.5 rounded-lg text-xs">₹99 ☕☕</a>
+                        <a href="upi://pay?pa=9840805248@okbizaxis&pn=Hari+Pravin&am=149&cu=INR&tn=Support+Skill+Shapes" class="arcade-btn bg-arcade-yellow text-arcade-dark px-3 py-1.5 rounded-lg text-xs">₹149 ☕☕☕</a>
+                    </div>
+                </div>
 
             <!-- Visitor Counter -->
             <div class="flex flex-col items-center mt-2 mb-8 z-10">
