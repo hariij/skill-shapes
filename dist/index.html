@@ -1843,7 +1843,12 @@
 
         // --- UPDATED PAYMENT ROUTING FUNCTION ---
         window.chaiPay = function(amt) {
-            var params = 'pa=' + UPI + '&pn=Hari%20Pravin&am=' + amt + '&cu=INR&tn=SupportSkillShapes';
+            // Generate a unique reference for every click to prevent GPay's "replay attack" block
+            var randomRef = 'TXN' + Math.floor(Math.random() * 1000000000);
+
+            // Add the mc, tr, and clean up the spaces in the tn parameter
+            var params = 'pa=' + UPI + '&pn=Hari%20Pravin&mc=5499&tr=' + randomRef + '&am=' + amt + '&cu=INR&tn=Support%20Skill%20Shapes';
+            // var params = 'pa=' + UPI + '&pn=Hari%20Pravin&am=' + amt + '&cu=INR&tn=SupportSkillShapes';
             var finalUrl = '';
             
             var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
