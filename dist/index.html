@@ -1778,99 +1778,79 @@
         <button onclick="closeChaiPopup()"
                 class="absolute top-3 right-3 w-7 h-7 bg-arcade-dark text-white font-black rounded-lg hover:bg-arcade-red hover:text-arcade-dark flex items-center justify-center text-sm leading-none">✕</button>
 
-        <span class="inline-block bg-arcade-yellow border-2 border-arcade-dark rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-widest text-arcade-dark mb-2">Safe Payment Mode</span>
+        <span class="inline-block bg-arcade-yellow border-2 border-arcade-dark rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-widest text-arcade-dark mb-2">Support the creator</span>
         <h2 class="font-black text-lg text-arcade-dark mb-4 leading-snug">Buy me a Tea ☕</h2>
 
-        <p class="text-[12px] font-bold text-slate-600 mb-4 leading-relaxed">
-            Select an amount below. We will <strong>copy the UPI ID</strong> and open your payment app automatically!
-        </p>
-
-        <div class="grid grid-cols-3 gap-2 mb-4">
-            <button onclick="chaiPay(25)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
-                <span class="text-xl">🍵</span>
-                <span class="text-base text-arcade-dark">₹25</span>
-            </button>
-            <button onclick="chaiPay(50)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
-                <span class="text-xl">🫚</span>
-                <span class="text-base text-arcade-dark">₹50</span>
-            </button>
-            <button onclick="chaiPay(75)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
-                <span class="text-xl">🌶️</span>
-                <span class="text-base text-arcade-dark">₹75</span>
-            </button>
+        <div class="grid grid-cols-3 gap-2 mb-2">
+        <button onclick="chaiPay(25)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
+            <span class="text-xl">🍵</span>
+            <span class="text-[10px] uppercase tracking-tight text-arcade-dark">Tea</span>
+            <span class="text-base text-arcade-dark">₹25</span>
+        </button>
+        <button onclick="chaiPay(50)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
+            <span class="text-xl">🫚</span>
+            <span class="text-[10px] uppercase tracking-tight text-arcade-dark">Ginger</span>
+            <span class="text-base text-arcade-dark">₹50</span>
+        </button>
+        <button onclick="chaiPay(75)" class="border-[3px] border-arcade-dark rounded-xl py-3 flex flex-col items-center gap-1 bg-white shadow-[4px_4px_0_#0F172A] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0F172A] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all font-black cursor-pointer">
+            <span class="text-xl">🌶️</span>
+            <span class="text-[10px] uppercase tracking-tight text-arcade-dark">Masala</span>
+            <span class="text-base text-arcade-dark">₹75</span>
+        </button>
         </div>
 
-        <div class="bg-slate-50 border-2 border-dashed border-slate-300 p-3 rounded-xl mb-4 text-center">
-            <p class="text-[10px] font-black text-slate-400 uppercase mb-1">Direct UPI ID</p>
-            <code class="text-sm font-black text-arcade-dark select-all" id="upi-id-text">9840805248@okbizaxis</code>
-            <button onclick="chaiPay(0)" class="block w-full mt-2 bg-arcade-dark text-white text-[10px] font-black py-2 rounded-lg uppercase hover:bg-arcade-blue hover:text-arcade-dark transition-colors">Copy ID & Open App</button>
+        <div class="flex items-center gap-2 border-[3px] border-arcade-dark rounded-xl px-3 py-1 shadow-[4px_4px_0_#0F172A] bg-white">
+        <span class="font-black text-arcade-dark text-sm">₹</span>
+        <input id="chai-custom-val" type="number" min="1" placeholder="Special amount ✨"
+                oninput="chaiCustomInput()"
+                class="flex-1 border-none outline-none font-black text-arcade-dark text-sm bg-transparent py-2 placeholder:text-slate-300 placeholder:font-bold min-w-0">
+        <button id="chai-custom-btn" onclick="chaiPayCustom()" disabled
+                class="bg-arcade-dark text-arcade-yellow border-none rounded-lg px-3 py-1.5 font-black text-[10px] uppercase tracking-widest cursor-pointer opacity-35 disabled:cursor-not-allowed transition-opacity">Pay ✨</button>
         </div>
 
-        <p class="text-center text-[10px] font-bold text-arcade-red mt-2 leading-relaxed">
-            If GPay says "Risky", just paste the copied ID directly in the app! 🛡️
+        <p class="text-center text-[10px] font-bold text-slate-400 mt-3 leading-relaxed">
+        Tap any tea to pay instantly · GPay · PhonePe · Paytm<br>
+        <span class="inline-flex items-center gap-1 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-0.5 mt-1 text-slate-500 text-[9px] uppercase tracking-wide">🔒 9840805248@okbizaxis</span>
         </p>
     </div>
     </div>
 
     <script>
     (function(){
-        var UPI='9840805248@okbizaxis';
-        window.openChaiPopup=function(){
-            var o=document.getElementById('chai-overlay');
-            o.style.display='flex';
-            setTimeout(function(){
-                o.classList.remove('opacity-0');
-                var p=document.getElementById('chai-popup');
-                p.classList.remove('opacity-0','translate-y-6','scale-95');
-            },10);
-        };
-        window.closeChaiPopup=function(){
-            var o=document.getElementById('chai-overlay');
-            var p=document.getElementById('chai-popup');
-            o.classList.add('opacity-0');
-            p.classList.add('opacity-0','translate-y-6','scale-95');
-            setTimeout(function(){o.style.display='none';},300);
-        };
-        window.handleChaiOverlay=function(e){
-            if(e.target===document.getElementById('chai-overlay'))closeChaiPopup();
-        };
-        window.chaiPay=function(amt){
-            // 1. Copy to clipboard
-            var el = document.createElement('textarea');
-            el.value = UPI;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-
-            // 2. Show Toast Notification
-            var toast = document.getElementById('custom-toast');
-            var title = document.getElementById('toast-title');
-            var desc = document.getElementById('toast-desc');
-            
-            if(toast && title && desc) {
-                toast.style.display = 'flex';
-                toast.className = "bg-arcade-dark text-white border-4 border-arcade-green shadow-[4px_4px_0px_#BFFCC6] rounded-xl px-6 py-4 flex items-center gap-3 w-[90%] max-w-md show";
-                title.innerText = "UPI ID Copied! ✨";
-                desc.innerText = amt > 0 ? "Opening app... If payment fails, paste the ID to pay ₹" + amt : "Opening app... Paste the ID to pay.";
-                
-                setTimeout(function(){
-                    toast.className = "bg-arcade-dark text-white border-4 border-arcade-green shadow-[4px_4px_0px_#BFFCC6] rounded-xl px-6 py-4 flex items-center gap-3 w-[90%] max-w-md hide";
-                    setTimeout(function(){ toast.style.display = 'none'; toast.className = ""; }, 300);
-                }, 4000);
-            }
-
-            // 3. Redirect to app after a tiny delay so they see the toast
-            setTimeout(function() {
-                if (amt > 0) {
-                    var tr = "T" + Math.floor(Date.now() / 1000);
-                    var url = 'upi://pay?pa=' + UPI + '&pn=Hari+Pravin&am=' + amt + '&cu=INR&tn=Support+Skill+Shapes&mc=0000&mode=02&tr=' + tr;
-                    window.location.href = url;
-                } else {
-                    window.location.href = 'upi://pay?pa=' + UPI;
-                }
-            }, 800);
-        };
+    var UPI='9840805248@okbizaxis';
+    window.openChaiPopup=function(){
+        var o=document.getElementById('chai-overlay');
+        o.style.display='flex';
+        setTimeout(function(){
+        o.classList.remove('opacity-0');
+        var p=document.getElementById('chai-popup');
+        p.classList.remove('opacity-0','translate-y-6','scale-95');
+        },10);
+    };
+    window.closeChaiPopup=function(){
+        var o=document.getElementById('chai-overlay');
+        var p=document.getElementById('chai-popup');
+        o.classList.add('opacity-0');
+        p.classList.add('opacity-0','translate-y-6','scale-95');
+        setTimeout(function(){o.style.display='none';},300);
+    };
+    window.handleChaiOverlay=function(e){
+        if(e.target===document.getElementById('chai-overlay'))closeChaiPopup();
+    };
+    window.chaiPay=function(amt){
+        window.location.href='upi://pay?pa='+UPI+'&pn=Hari%20Pravin&am='+amt+'&cu=INR&tn=SupportSkillShapes';
+    };
+    window.chaiCustomInput=function(){
+        var v=parseInt(document.getElementById('chai-custom-val').value);
+        var btn=document.getElementById('chai-custom-btn');
+        btn.disabled=!(v>0);
+        btn.style.opacity=(v>0)?'1':'0.35';
+        btn.style.cursor=(v>0)?'pointer':'not-allowed';
+    };
+    window.chaiPayCustom=function(){
+        var v=parseInt(document.getElementById('chai-custom-val').value);
+        if(v>0)chaiPay(v);
+    };
     })();
     </script>
 </body>
