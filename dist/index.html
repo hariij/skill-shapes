@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Career Shape | AI Survival Guide</title>
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="The world used to reward specialists. Not anymore. Discover your career skill shape in this gamified interactive guide before AI chooses it for you.">
+    <meta name="keywords" content="Career Shapes, Skill Shapes, T-Shaped Employee, Pi-Shaped, Career Advice, AI Jobs, Future of Work, Interactive Infographic, Gamified Learning">
+    <meta name="author" content="Hari Pravin">
+    <link rel="canonical" href="https://hariprav.in/skill-shapes" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hariprav.in/skill-shapes">
+    <meta property="og:title" content="Choose Your Career Shape Before AI Chooses It For You">
+    <meta property="og:description" content="Are you an I-Shape, T-Shape, or a rare Comb-Shape? Take the interactive quiz to find out your AI Era survival stats.">
+    <meta property="og:image" content="https://hariprav.in/skill-shapes/images/SkillShapesOG.jpg"> 
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta property="og:site_name" content="Skill Shapes by Hari Pravin">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hariprav.in/skill-shapes">
+    <meta name="twitter:title" content="Choose Your Career Shape Before AI Chooses It For You">
+    <meta name="twitter:description" content="Are you an I-Shape, T-Shape, or a rare Comb-Shape? Take the interactive quiz to find out your AI Era survival stats.">
+    <meta name="twitter:image" content="https://hariprav.in/skill-shapes/images/SkillShapesOG.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+    
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Analytics -->
+    <script data-goatcounter="https://skillshapes.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Nunito', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        arcade: {
+                            pink: '#FF9CEE',
+                            blue: '#85E3FF',
+                            green: '#BFFCC6',
+                            yellow: '#FFF58E',
+                            purple: '#C5A3FF',
+                            orange: '#FFB5A7',
+                            bg: '#F8FAFC',
+                            dark: '#0F172A',
+                            red: '#FF8B94'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-fast': 'float 2.5s ease-in-out infinite',
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'wiggle': 'wiggle 2s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'dash': 'dash 20s linear infinite',
+                        'toast-in': 'toastIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+                        'toast-out': 'toastOut 0.3s ease-in forwards',
+                        'wave-flow': 'waveFlow 3s linear infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        },
+                        dash: {
+                            to: { strokeDashoffset: -1000 }
+                        },
+                        toastIn: {
+                            '0%': { transform: 'translateY(100%) translateX(-50%)', opacity: 0 },
+                            '100%': { transform: 'translateY(0) translateX(-50%)', opacity: 1 }
+                        },
+                        toastOut: {
+                            '0%': { transform: 'translateY(0) translateX(-50%)', opacity: 1 },
+                            '100%': { transform: 'translateY(100%) translateX(-50%)', opacity: 0 }
+                        },
+                        waveFlow: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* BACKGROUNDS */
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+        
+        .bg-polka {
+            background-color: #F8FAFC;
+            background-image: radial-gradient(#CBD5E1 3px, transparent 3px);
+            background-size: 30px 30px;
+        }
+        
+        /* New Dark Polka for Hero */
+        .bg-dark-polka {
+            background-color: #0B1120;
+            background-image: radial-gradient(rgba(255,255,255,0.15) 3px, transparent 3px);
+            background-size: 30px 30px;
+        }
+
+        .bg-notebook {
+            background-color: #ffffff;
+            background-image: linear-gradient(transparent 95%, #E2E8F0 95%);
+            background-size: 100% 32px;
+            position: relative;
+        }
+        .bg-notebook::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 40px;
+            width: 4px;
+            background-color: #FF8B94;
+            opacity: 0.5;
+            z-index: 1; /* Keep above bg, below content */
+        }
+        @media (max-width: 768px) {
+            .bg-notebook::before { left: 20px; }
+        }
+
+        .bg-stripes {
+            background-image: repeating-linear-gradient(
+                45deg,
+                #F8FAFC,
+                #F8FAFC 20px,
+                #F1F5F9 20px,
+                #F1F5F9 40px
+            );
+        }
+
+        .bg-grid {
+            background-image: 
+                linear-gradient(#E2E8F0 2px, transparent 2px),
+                linear-gradient(90deg, #E2E8F0 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        .bg-graph {
+            background-color: #0F172A;
+            background-image: 
+                linear-gradient(rgba(133, 227, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(133, 227, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .bg-dark-grid {
+            background-color: #0F172A;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        .bg-dark-stripes {
+            background-color: #0B1120;
+            background-image: repeating-linear-gradient(
+                45deg,
+                #0B1120,
+                #0B1120 20px,
+                #17223b 20px,
+                #17223b 40px
+            );
+        }
+        
+        /* CARDS & BUTTONS */
+        .arcade-card {
+            background: #ffffff;
+            border: 4px solid #0F172A;
+            border-radius: 16px;
+            box-shadow: 6px 6px 0px #0F172A;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .arcade-card.interactive:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px #0F172A;
+        }
+
+        .arcade-btn {
+            border: 3px solid #0F172A;
+            box-shadow: 4px 4px 0px #0F172A;
+            transition: all 0.1s ease;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .arcade-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #0F172A;
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* QUIZ OPTIONS */
+        .qopt {
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 3px solid #0F172A;
+            background: #ffffff;
+            color: #0F172A;
+            font-weight: 800;
+            transition: all 0.2s;
+            text-align: left;
+            box-shadow: 4px 4px 0px #0F172A;
+            display: flex;
+            align-items: center;
+        }
+        .qopt:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px #0F172A;
+            background: #F8FAFC;
+        }
+
+        /* 3D FLIP CARDS (CHEAT SHEET) */
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px;
+            height: 240px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 4px solid #0F172A;
+            border-radius: 16px;
+            box-shadow: 6px 6px 0px #0F172A;
+        }
+        .flip-card-front {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        /* Custom Toast Notification */
+        #custom-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: none;
+        }
+        #custom-toast.show {
+            display: flex;
+            animation: toast-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        #custom-toast.hide {
+            display: flex;
+            animation: toast-out 0.3s ease-in forwards;
+        }
+    </style>
+</head>
+<body class="selection:bg-arcade-pink selection:text-arcade-dark">
+
+    <!-- CUSTOM TOAST NOTIFICATION -->
+    <div id="custom-toast" class="bg-arcade-dark text-white border-4 border-arcade-green shadow-[4px_4px_0px_#BFFCC6] rounded-xl px-6 py-4 items-center gap-3 w-[90%] max-w-md">
+        <span class="text-2xl animate-bounce">📋</span>
+        <div>
+            <h4 class="font-black text-arcade-green uppercase tracking-widest text-sm" id="toast-title">Copied to Clipboard!</h4>
+            <p class="font-bold text-xs text-slate-300" id="toast-desc">Paste the text into your post. Social networks block auto-filling!</p>
+        </div>
+    </div>
+
+    <!-- FLOATING CHAI4ME BUTTON -->
+    <div class="fixed bottom-6 left-4 z-50 w-[130px] md:w-[150px]">
+        <a href="https://chai4.me/hari" target="_blank" class="arcade-card interactive bg-white p-2 md:p-3 flex items-center justify-center gap-1 md:gap-2 font-black cursor-pointer hover:bg-slate-100 flex-col group border-[3px]">
+            <img src="https://chai4.me/icons/wordmark.png" alt="Chai4Me" class="h-4 md:h-5 object-contain group-hover:scale-110 transition-transform shrink-0"/>
+            <span class="text-arcade-dark text-center leading-tight text-[10px] md:text-[11px]" data-i18n="float_chai">Enjoying? Support with a tea ☕</span>
+        </a>
+    </div>
+
+    <!-- FLOATING LANGUAGE TOGGLE -->
+    <div class="fixed bottom-6 right-4 md:right-6 z-50 flex bg-white border-4 border-arcade-dark rounded-full shadow-[4px_4px_0px_#0F172A] overflow-hidden p-1">
+        <button id="btn-en" onclick="setLang('en')" class="px-3 py-1.5 font-black text-xs md:text-sm rounded-full transition-colors bg-arcade-pink text-arcade-dark">ENG</button>
+        <button id="btn-ta" onclick="setLang('ta')" class="px-3 py-1.5 font-black text-xs md:text-sm rounded-full transition-colors hover:bg-slate-100 text-slate-400">தமிழ்</button>
+    </div>
+
+    <!-- HERO SECTION (Dark Polka + Detailed Cartoon 3D Shapes) -->
+    <header class="relative min-h-[95vh] flex flex-col items-center justify-center pt-10 pb-16 px-4 overflow-hidden border-b-8 border-white bg-dark-polka">
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10 w-full">
+            <!-- Retro Arcade Tokens -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+                <span class="bg-arcade-pink text-arcade-dark border-2 border-white px-4 py-1.5 rounded-full text-xs md:text-sm font-black animate-bounce shadow-[2px_2px_0px_#FFF]" data-i18n="hero_badge1">Player 1 Ready 🕹️</span>
+                <span class="bg-[#1E293B] text-arcade-blue border-2 border-arcade-blue px-4 py-1.5 rounded-full text-xs md:text-sm font-black animate-bounce shadow-[2px_2px_0px_#85E3FF]" style="animation-delay: 0.2s;" data-i18n="hero_badge2">Career Strategy 🗺️</span>
+                <span class="bg-arcade-yellow text-arcade-dark border-2 border-white px-4 py-1.5 rounded-full text-xs md:text-sm font-black animate-bounce shadow-[2px_2px_0px_#FFF]" style="animation-delay: 0.4s;" data-i18n="hero_badge3">Unlock Your Potential 🔓</span>
+            </div>
+            
+            <!-- Highly readable dark-themed title -->
+            <h1 class="text-6xl md:text-8xl font-black leading-tight mb-6 uppercase tracking-tight text-white reveal" style="transition-delay: 0.1s;">
+                <span data-i18n="hero_title_1">Choose Your</span><br>
+                <span class="relative inline-block mt-4">
+                    <span class="absolute inset-0 bg-arcade-pink transform -rotate-2 rounded-xl -z-10 border-4 border-white shadow-[8px_8px_0px_#FFF]"></span>
+                    <span class="relative px-6 py-2 text-arcade-dark" data-i18n="hero_title_2">Career Shape</span>
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-3xl font-bold text-slate-200 mb-16 max-w-3xl mx-auto reveal bg-[#1E293B] inline-block px-6 py-3 border-2 border-arcade-blue rounded-xl transform rotate-1 shadow-[4px_4px_0px_#85E3FF]" style="transition-delay: 0.2s;" data-i18n="hero_subtitle">Before AI chooses it for you.</p>
+            
+            <!-- 3D Dancing Character Shapes Cluster (Detailed SVGs) -->
+            <div class="flex flex-wrap justify-center items-end gap-4 md:gap-8 mb-12 h-32 md:h-44 reveal" style="transition-delay: 0.3s;">
+                
+                <!-- I - Deep Diver -->
+                <div class="animate-bounce-slow">
+                    <svg viewBox="0 0 100 120" class="w-12 h-16 md:w-20 md:h-24 animate-wiggle drop-shadow-[0_0_15px_rgba(255,139,148,0.6)] overflow-visible">
+                        <rect x="35" y="20" width="30" height="90" rx="4" fill="#FF8B94" stroke="#FFF" stroke-width="5"/>
+                        <circle cx="45" cy="45" r="4" fill="#0F172A"/><circle cx="55" cy="45" r="4" fill="#0F172A"/>
+                        <path d="M 25 25 C 25 0, 75 0, 75 25 Z" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        <path d="M 75 60 L 95 90 M 90 90 L 100 90 L 95 105 Z" fill="#cbd5e1" stroke="#FFF" stroke-width="4"/>
+                    </svg>
+                </div>
+                
+                <!-- T - Collaborator -->
+                <div class="animate-float" style="animation-delay: 0.5s;">
+                    <svg viewBox="0 0 120 120" class="w-16 h-16 md:w-24 md:h-24 drop-shadow-[0_0_15px_rgba(133,227,255,0.6)] overflow-visible">
+                        <rect x="10" y="30" width="100" height="25" rx="4" fill="#85E3FF" stroke="#FFF" stroke-width="5"/>
+                        <rect x="45" y="55" width="30" height="55" rx="4" fill="#85E3FF" stroke="#FFF" stroke-width="5"/>
+                        <circle cx="55" cy="42" r="4" fill="#0F172A"/><circle cx="65" cy="42" r="4" fill="#0F172A"/>
+                        <path d="M 10 42 Q -10 60 10 80" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M 110 42 Q 130 60 110 80" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                
+                <!-- Pi - Bridge Builder -->
+                <div class="animate-float-fast" style="animation-delay: 0.2s;">
+                    <svg viewBox="0 0 120 120" class="w-16 h-16 md:w-24 md:h-24 animate-wiggle drop-shadow-[0_0_15px_rgba(191,252,198,0.6)] overflow-visible">
+                        <rect x="15" y="20" width="90" height="25" rx="4" fill="#BFFCC6" stroke="#FFF" stroke-width="5"/>
+                        <rect x="25" y="45" width="25" height="65" rx="4" fill="#BFFCC6" stroke="#FFF" stroke-width="5"/>
+                        <rect x="70" y="45" width="25" height="65" rx="4" fill="#BFFCC6" stroke="#FFF" stroke-width="5"/>
+                        <circle cx="50" cy="32" r="4" fill="#0F172A"/><circle cx="70" cy="32" r="4" fill="#0F172A"/>
+                    </svg>
+                </div>
+
+                <!-- E - Executor -->
+                <div class="animate-bounce-slow" style="animation-delay: 0.8s;">
+                    <svg viewBox="0 0 120 120" class="w-16 h-16 md:w-24 md:h-24 drop-shadow-[0_0_15px_rgba(197,163,255,0.6)] overflow-visible">
+                        <rect x="20" y="10" width="25" height="100" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                        <rect x="40" y="10" width="50" height="20" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                        <rect x="40" y="50" width="40" height="20" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                        <rect x="40" y="90" width="50" height="20" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                        <circle cx="32" cy="20" r="3" fill="#0F172A"/><circle cx="32" cy="30" r="3" fill="#0F172A"/>
+                    </svg>
+                </div>
+
+                <!-- M - Overachiever -->
+                <div class="animate-float" style="animation-delay: 1.2s;">
+                    <svg viewBox="0 0 140 120" class="w-20 h-16 md:w-28 md:h-24 drop-shadow-[0_0_15px_rgba(255,181,167,0.6)] overflow-visible">
+                        <rect x="10" y="20" width="120" height="25" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                        <rect x="15" y="45" width="25" height="65" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                        <rect x="55" y="45" width="25" height="65" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                        <rect x="95" y="45" width="25" height="65" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                        <circle cx="50" cy="32" r="4" fill="#0F172A"/><circle cx="90" cy="32" r="4" fill="#0F172A"/>
+                    </svg>
+                </div>
+
+                <!-- Comb - Unicorn -->
+                <div class="animate-float-fast" style="animation-delay: 0.9s;">
+                    <svg viewBox="0 0 160 100" class="w-20 h-12 md:w-32 md:h-20 animate-wiggle drop-shadow-[0_0_15px_rgba(255,245,142,0.6)] overflow-visible">
+                        <rect x="10" y="10" width="140" height="20" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        <rect x="20" y="30" width="15" height="60" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        <rect x="45" y="30" width="15" height="45" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        <rect x="70" y="30" width="15" height="65" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        <rect x="95" y="30" width="15" height="40" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        <rect x="120" y="30" width="15" height="55" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                    </svg>
+                </div>
+                
+                <!-- X - Boss -->
+                <div class="animate-float" style="animation-delay: 0.6s;">
+                    <svg viewBox="0 0 100 100" class="w-16 h-16 md:w-24 md:h-24 drop-shadow-[0_0_20px_rgba(255,156,238,0.8)] overflow-visible">
+                        <path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="#FFF" stroke-width="20" stroke-linecap="round"/>
+                        <path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="#FF9CEE" stroke-width="10" stroke-linecap="round"/>
+                        <path d="M 30 10 L 50 -10 L 70 10 Z" fill="#FFF58E" stroke="#FFF" stroke-width="4" stroke-linejoin="round" class="animate-bounce-slow"/>
+                    </svg>
+                </div>
+            </div>
+
+            <button onclick="document.getElementById('setup').scrollIntoView()" class="arcade-card interactive bg-[#1E293B] text-white px-8 py-5 rounded-xl text-xl md:text-2xl font-black shadow-[8px_8px_0px_#FF9CEE] hover:-translate-y-2 transition-transform uppercase inline-flex items-center gap-3 reveal border-white border-4" style="transition-delay: 0.4s;">
+                <span data-i18n="btn_start">Discover Your Shape</span>
+                <svg class="w-6 h-6 md:w-8 md:h-8 animate-bounce text-arcade-pink" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 21l-9-13h18z" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- PROLOGUE: THE SETUP (Workbook / Dossier Style - Light Theme) -->
+    <section id="setup" class="py-24 w-full relative z-10 border-b-8 border-arcade-dark bg-notebook overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-20 pl-8 pr-4 md:pl-20 md:pr-8 reveal">
+            
+            <!-- Dossier Tab -->
+            <div class="inline-block bg-arcade-dark text-white font-black px-6 py-2 rounded-t-xl border-4 border-b-0 border-arcade-dark uppercase tracking-widest text-lg ml-4 md:ml-8 transform rotate-1 translate-y-1" data-i18n="setup_tab">
+                PROLOGUE 📂
+            </div>
+
+            <!-- Dossier Content -->
+            <div class="bg-[#FFFDF5] p-8 md:p-12 border-4 border-arcade-dark rounded-2xl rounded-tl-none shadow-[10px_10px_0px_#0F172A] relative overflow-hidden">
+                
+                <!-- Red Stamp (Moved to z-index 0 so it's behind text) -->
+                <div class="absolute top-10 right-4 md:right-10 border-4 border-arcade-red text-arcade-red font-black text-3xl md:text-5xl uppercase tracking-widest px-4 py-2 transform rotate-12 opacity-20 z-0 pointer-events-none" data-i18n="setup_stamp">Top Secret</div>
+
+                <div class="relative z-10 text-2xl md:text-4xl font-black mb-10 italic text-arcade-dark leading-tight border-l-8 border-arcade-pink pl-6 py-2 bg-white inline-block border-y-2 border-r-2 border-slate-200 shadow-sm transform -rotate-1">
+                    <span data-i18n="setup_quote_1">"What do you do?" is the wrong question.</span><br>
+                    <span class="text-arcade-pink" data-i18n="setup_quote_2">The right question is: "What shape are you?"</span>
+                </div>
+                
+                <div class="relative z-10 space-y-8 text-lg md:text-xl font-bold text-slate-700 leading-relaxed">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-arcade-blue text-arcade-dark font-black text-2xl w-12 h-12 flex items-center justify-center rounded-full shrink-0 border-2 border-arcade-dark shadow-[2px_2px_0px_#0F172A]">1</div>
+                        <p data-i18n="setup_p1">In the 1980s, McKinsey had a problem. They were hiring brilliant specialists — people who knew everything about one thing — and watching them fail spectacularly when projects needed breadth, judgment, and cross-functional collaboration. So they invented a term internally: the <strong class="bg-yellow-200 px-1 border border-yellow-400">"T-shaped person."</strong> Someone with real depth in one area, but enough breadth to play well with others.</p>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-arcade-green text-arcade-dark font-black text-2xl w-12 h-12 flex items-center justify-center rounded-full shrink-0 border-2 border-arcade-dark shadow-[2px_2px_0px_#0F172A]">2</div>
+                        <p data-i18n="setup_p2">The concept leaked out. IDEO's Tim Brown made it famous. Agile teams adopted it. And then — slowly, quietly — people started realising the T was just the beginning. There were more shapes. A lot more.</p>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-arcade-pink text-arcade-dark font-black text-2xl w-12 h-12 flex items-center justify-center rounded-full shrink-0 border-2 border-arcade-dark shadow-[2px_2px_0px_#0F172A]">3</div>
+                        <p class="text-arcade-dark bg-white border-2 border-dashed border-slate-400 p-4 rounded-lg shadow-sm" data-i18n="setup_p3">This is the complete guide to all of them. And why — right now, in the AI Era — understanding your shape isn't optional anymore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 1: THE GREAT DISRUPTION (Dark Theme Variant) -->
+    <section class="py-24 px-4 w-full relative z-10 reveal border-b-8 border-white bg-dark-stripes">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            
+            <div class="text-center mb-12">
+                <div class="inline-block bg-arcade-red text-white font-black px-4 py-1 rounded-lg border-2 border-white mb-4 shadow-[2px_2px_0px_#FFF] tracking-widest text-sm uppercase" data-i18n="lvl1_tag">Level 1</div>
+                <h2 class="text-4xl md:text-6xl font-black text-white drop-shadow-[2px_2px_0px_#0F172A] mb-6 uppercase leading-tight" data-i18n="lvl1_title">The Great Disruption 🤖</h2>
+                <p class="text-xl font-bold text-slate-300 bg-arcade-dark px-4 py-1 border-2 border-arcade-blue inline-block transform -rotate-1 shadow-[4px_4px_0px_#85E3FF]" data-i18n="lvl1_desc">Let's be blunt about what's happening globally.</p>
+            </div>
+
+            <!-- Fact-Checked Stats Dashboard (Dark Cards with Bright Shadows) -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-5xl">
+                
+                <div class="arcade-card bg-[#1E293B] border-white p-6 text-center transform -rotate-1 hover:rotate-0 flex flex-col items-center justify-center shadow-[6px_6px_0px_#FF8B94]">
+                    <div class="text-4xl mb-3">📉</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[2px_2px_0px_#0F172A]">300M</div>
+                    <div class="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-400 leading-relaxed" data-i18n="stat_1">Full-time jobs exposed to automation<br>(Goldman Sachs)</div>
+                </div>
+                
+                <div class="arcade-card bg-[#1E293B] border-white p-6 text-center transform rotate-1 hover:rotate-0 flex flex-col items-center justify-center shadow-[6px_6px_0px_#FFF58E]">
+                    <div class="text-4xl mb-3">🔄</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[2px_2px_0px_#0F172A]">44%</div>
+                    <div class="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-400 leading-relaxed" data-i18n="stat_2">Of core worker skills expected to disrupt<br>(WEF)</div>
+                </div>
+                
+                <div class="arcade-card bg-[#1E293B] border-white p-6 text-center transform -rotate-1 hover:rotate-0 flex flex-col items-center justify-center shadow-[6px_6px_0px_#BFFCC6]">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[2px_2px_0px_#0F172A]">97M</div>
+                    <div class="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-400 leading-relaxed" data-i18n="stat_3">New AI-augmented roles emerging globally<br>(WEF)</div>
+                </div>
+
+                <div class="arcade-card bg-[#1E293B] border-white p-6 text-center transform rotate-1 hover:rotate-0 flex flex-col items-center justify-center shadow-[6px_6px_0px_#FF9CEE]">
+                    <div class="text-4xl mb-3">⚡</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[2px_2px_0px_#0F172A]">65%</div>
+                    <div class="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-400 leading-relaxed" data-i18n="stat_4">Of tasks have high automation potential<br>(McKinsey)</div>
+                </div>
+
+                <div class="arcade-card bg-[#1E293B] border-white p-6 text-center transform -rotate-1 hover:rotate-0 flex flex-col items-center justify-center shadow-[6px_6px_0px_#85E3FF]">
+                    <div class="text-4xl mb-3">📈</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[2px_2px_0px_#0F172A]">10x</div>
+                    <div class="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-400 leading-relaxed" data-i18n="stat_5">Productivity boost for cross-domain AI<br>(Harvard/BCG)</div>
+                </div>
+
+                <div class="arcade-card bg-[#1E293B] border-white p-6 text-center transform rotate-1 hover:rotate-0 flex flex-col items-center justify-center shadow-[6px_6px_0px_#FFB5A7]">
+                    <div class="text-4xl mb-3">⚠️</div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-2 drop-shadow-[2px_2px_0px_#0F172A]">85M</div>
+                    <div class="font-bold text-[10px] md:text-xs uppercase tracking-widest text-slate-400 leading-relaxed" data-i18n="stat_6">Routine jobs displaced globally<br>(WEF)</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 2: THE SPECIALIST KILLER -->
+    <section class="py-24 px-4 w-full relative z-10 reveal border-b-8 border-arcade-dark bg-grid">
+        <div class="max-w-5xl mx-auto flex flex-col items-center">
+            
+            <div class="text-center mb-12">
+                <div class="inline-block bg-arcade-blue text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-arcade-dark mb-4 shadow-[2px_2px_0px_#0F172A] tracking-widest text-sm uppercase" data-i18n="lvl2_tag">Level 2</div>
+                <h2 class="text-4xl md:text-5xl font-black text-arcade-dark mb-6 uppercase leading-tight" data-i18n="lvl2_title">The Specialist Killer ⚔️</h2>
+            </div>
+
+            <!-- The VS Battle Section -->
+            <div class="w-full max-w-5xl arcade-card bg-[#F1F5F9] border-8 flex flex-col md:flex-row overflow-hidden shadow-[12px_12px_0px_#0F172A] mb-12 relative">
+                <!-- VS Badge -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-arcade-dark text-arcade-pink font-black text-2xl md:text-4xl rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center border-4 border-arcade-pink shadow-[0_0_20px_#FF9CEE] z-20 italic">VS</div>
+                
+                <!-- Left: AI -->
+                <div class="md:w-1/2 p-8 md:p-10 bg-white border-b-4 md:border-b-0 md:border-r-4 border-arcade-dark flex flex-col justify-center">
+                    <div class="inline-block bg-arcade-red text-white font-black px-3 py-1 rounded border-2 border-arcade-dark mb-6 self-start transform -rotate-2 uppercase text-sm shadow-sm" data-i18n="ai_vs_1">The Specialist Killer</div>
+                    <p class="text-lg font-bold text-slate-700 leading-relaxed" data-i18n="ai_p1">
+                        AI is a specialist-killing machine. It can pass the bar exam. Diagnose skin cancer better than dermatologists. Write code, generate designs, summarise legal documents. Every pure I-shaped knowledge worker is staring down the barrel of a technology that does their one deep thing — fast, cheap, tirelessly.
+                    </p>
+                </div>
+                <!-- Right: Humans -->
+                <div class="md:w-1/2 p-8 md:p-10 bg-arcade-blue/10 flex flex-col justify-center">
+                    <div class="inline-block bg-arcade-green text-arcade-dark font-black px-3 py-1 rounded border-2 border-arcade-dark mb-6 self-start transform rotate-1 uppercase text-sm shadow-sm ml-auto md:ml-0" data-i18n="ai_vs_2">The Human Shield</div>
+                    <p class="text-lg font-bold text-slate-700 leading-relaxed" data-i18n="ai_p2">
+                        But here's what AI cannot do: <strong>synthesise across messy human domains, exercise judgment under ambiguity, build trust across a table, and lead people.</strong> Those are T, Pi, E, M, Comb, and X-shaped skills. The shapes that know enough about enough to know what questions to ask the AI.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quote Box -->
+            <div class="bg-white border-l-8 border-arcade-blue p-6 rounded-r-xl max-w-4xl shadow-sm border-y-2 border-r-2 border-slate-200">
+                <p class="font-black text-xl md:text-2xl text-arcade-dark italic leading-tight" data-i18n="ai_quote">
+                    "AI doesn't replace T-shaped people. It makes them 10x more powerful — because now they have an I-shaped assistant for every domain they touch."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 3: THE SURVIVAL INDEX (Graph Paper, Wave Cards) -->
+    <section class="py-20 px-4 w-full relative z-10 reveal border-b-8 border-arcade-dark bg-graph text-white" id="ai-chart-section">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <div class="inline-block bg-arcade-green text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-arcade-dark mb-4 shadow-[2px_2px_0px_#BFFCC6] tracking-widest text-sm uppercase" data-i18n="lvl3_tag">Level 3</div>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase drop-shadow-[2px_2px_0px_#0F172A]" data-i18n="index_title">AI Survival Index 🛡️</h2>
+                <p class="font-bold text-arcade-blue text-sm md:text-base uppercase tracking-widest bg-arcade-dark inline-block px-4 py-1 rounded border-2 border-arcade-blue shadow-[2px_2px_0px_#85E3FF]" data-i18n="chart_subtitle">Higher = More Resilient. Depth alone no longer protects you.</p>
+            </div>
+
+            <!-- Liquid Wave Cards Grid -->
+            <div id="ai-grid-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+                <!-- Cards injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 4: THE SHAPES (Grid Blueprint) -->
+    <section class="py-24 w-full relative z-10 border-b-8 border-arcade-dark bg-notebook">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block bg-arcade-orange text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-arcade-dark mb-4 transform rotate-2 shadow-[2px_2px_0px_#0F172A] tracking-widest text-sm uppercase" data-i18n="lvl4_tag">Level 4</div>
+                <br>
+                <h2 class="text-4xl md:text-6xl font-black text-arcade-dark mb-6 uppercase bg-white inline-block px-6 py-2 border-4 border-arcade-dark shadow-[6px_6px_0px_#0F172A]" data-i18n="lvl4_title">The Skill Archetypes 🧬</h2>
+                <p class="font-bold text-slate-700 text-lg max-w-2xl mx-auto bg-white/80 p-3 rounded-xl border-2 border-dashed border-slate-400 mt-4" data-i18n="lvl4_desc">These aren't personality types. They're not fixed. They're the shape your skills make right now — and the shape you're aiming to grow into.</p>
+            </div>
+
+            <div class="space-y-20">
+                
+                <!-- 1. I-SHAPED -->
+                <div class="arcade-card bg-white border-8 flex flex-col lg:flex-row overflow-hidden shadow-[12px_12px_0px_#0F172A] reveal group">
+                    <div class="lg:w-1/3 bg-arcade-dark p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-r-8 border-arcade-dark relative">
+                        <div class="absolute top-4 left-4 bg-arcade-red text-white text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-arcade-dark shadow-[2px_2px_0px_#0F172A]">18% AI Survival</div>
+                        <svg viewBox="0 0 100 120" class="w-32 h-40 mt-8 drop-shadow-[0_0_15px_rgba(255,139,148,0.6)] overflow-visible group-hover:animate-float">
+                            <rect x="35" y="20" width="30" height="90" rx="4" fill="#FF8B94" stroke="#FFF" stroke-width="5"/>
+                            <circle cx="45" cy="45" r="4" fill="#0F172A"/><circle cx="55" cy="45" r="4" fill="#0F172A"/>
+                            <path d="M 25 25 C 25 0, 75 0, 75 25 Z" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                            <path d="M 75 60 L 95 90 M 90 90 L 100 90 L 95 105 Z" fill="#cbd5e1" stroke="#FFF" stroke-width="4"/>
+                        </svg>
+                        <h3 class="text-4xl font-black text-white mt-6 uppercase drop-shadow-[2px_2px_0px_#FF8B94]">I-Shaped</h3>
+                        <p class="font-black text-arcade-red mt-2 tracking-widest uppercase border-b-2 border-arcade-red text-center" data-i18n="s1_nick">The Deep Diver</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center">
+                        <div class="font-black text-xl mb-6 bg-arcade-dark text-white inline-block px-4 py-2 rounded transform -rotate-1 self-start shadow-sm" data-i18n="s1_desc">One skill. Drilled all the way down.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-300">
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed mb-4" data-i18n="s1_story1">Picture a neurosurgeon at a dinner party. Someone asks what they do. They explain — in loving detail — the specific sub-type of aneurysm they operated on this morning. The table goes quiet. This is the I-shaped person in their natural habitat: <strong>incomprehensibly deep, completely unaware that nobody else is following.</strong> Examples range from sushi master Jiro Ono to brilliant academic researchers like Marie Curie.</p>
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed" data-i18n="s1_story2">The I-shape is the oldest career shape in human history. One thing, done to perfection, for life. And for centuries, that was enough. <strong>Then AI arrived and learned to do their one thing. In seconds. For free.</strong></p>
+                        </div>
+                        
+                        <div class="bg-arcade-bg border-4 border-arcade-dark p-5 rounded-xl shadow-[4px_4px_0px_#FF8B94] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-dark text-white font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#FF8B94]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-800 font-bold mt-2" data-i18n="s1_punch">They can spend three hours explaining the exact chemical makeup of the iceberg, but they won't notice the ship is sinking.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-600">
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s1_ex1">Surgeons</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s1_ex2">Tax Lawyers</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s1_ex3">Academic Researchers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. T-SHAPED -->
+                <div class="arcade-card bg-white border-8 flex flex-col lg:flex-row-reverse overflow-hidden shadow-[12px_12px_0px_#0F172A] reveal group">
+                    <div class="lg:w-1/3 bg-arcade-dark p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-l-8 border-arcade-dark relative">
+                        <div class="absolute top-4 right-4 bg-arcade-blue text-arcade-dark text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-white shadow-[2px_2px_0px_#85E3FF]">72% AI Survival</div>
+                        <svg viewBox="0 0 120 120" class="w-40 h-40 mt-8 drop-shadow-[0_0_15px_rgba(133,227,255,0.6)] overflow-visible group-hover:animate-wiggle">
+                            <rect x="10" y="30" width="100" height="25" rx="4" fill="#85E3FF" stroke="#FFF" stroke-width="5"/>
+                            <rect x="45" y="55" width="30" height="55" rx="4" fill="#85E3FF" stroke="#FFF" stroke-width="5"/>
+                            <circle cx="55" cy="42" r="4" fill="#0F172A"/><circle cx="65" cy="42" r="4" fill="#0F172A"/>
+                            <path d="M 10 42 Q -10 60 10 80" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M 110 42 Q 130 60 110 80" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <h3 class="text-4xl font-black text-white mt-6 uppercase drop-shadow-[2px_2px_0px_#85E3FF]">T-Shaped</h3>
+                        <p class="font-black text-arcade-blue mt-2 tracking-widest uppercase border-b-2 border-arcade-blue text-center" data-i18n="s2_nick">The Versatile Collaborator</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center">
+                        <div class="font-black text-xl mb-6 bg-arcade-blue text-arcade-dark inline-block px-4 py-2 rounded transform rotate-1 border-2 border-arcade-dark self-start shadow-sm" data-i18n="s2_desc">One deep expertise. Enough breadth to be dangerous.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-300">
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed mb-4" data-i18n="s2_story1">The T-shaped person is the MVP (Most Valuable Professional) that every startup founder describes when they say "we need someone who can wear many hats." They mean: someone with a genuine skill, who also doesn't stare blankly when you say "customer", "revenue", or "please help us with this email."</p>
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed" data-i18n="s2_story2">The horizontal bar of the T isn't fluff. It's <strong>the most underrated professional skill there is: the ability to collaborate without being a specialist.</strong> To sit in a room full of engineers and ask the right question. To sit with designers and not break things. McKinsey invented this shape. Tim Brown from IDEO made it famous.</p>
+                        </div>
+                        
+                        <div class="bg-arcade-bg border-4 border-arcade-dark p-5 rounded-xl shadow-[4px_4px_0px_#85E3FF] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-dark text-white font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#85E3FF]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-800 font-bold mt-2" data-i18n="s2_punch">The T-shaped chef knows every cuisine but is a world-class expert in pasta. He will absolutely judge your mac & cheese — but he'll do it with empathy and a wine pairing suggestion.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-600">
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s2_ex1">Product Managers</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s2_ex2">UX Designers</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s2_ex3">Agile Leaders</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Pi-SHAPED -->
+                <div class="arcade-card bg-white border-8 flex flex-col lg:flex-row overflow-hidden shadow-[12px_12px_0px_#0F172A] reveal group">
+                    <div class="lg:w-1/3 bg-arcade-dark p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-r-8 border-arcade-dark relative">
+                        <div class="absolute top-4 left-4 bg-arcade-green text-arcade-dark text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-white shadow-[2px_2px_0px_#BFFCC6]">84% AI Survival</div>
+                        <svg viewBox="0 0 120 120" class="w-40 h-40 mt-8 drop-shadow-[0_0_15px_rgba(191,252,198,0.6)] overflow-visible group-hover:animate-float">
+                            <rect x="15" y="20" width="90" height="25" rx="4" fill="#BFFCC6" stroke="#FFF" stroke-width="5"/>
+                            <rect x="25" y="45" width="25" height="65" rx="4" fill="#BFFCC6" stroke="#FFF" stroke-width="5"/>
+                            <rect x="70" y="45" width="25" height="65" rx="4" fill="#BFFCC6" stroke="#FFF" stroke-width="5"/>
+                            <circle cx="50" cy="32" r="4" fill="#0F172A"/><circle cx="70" cy="32" r="4" fill="#0F172A"/>
+                        </svg>
+                        <h3 class="text-4xl font-black text-white mt-6 uppercase drop-shadow-[2px_2px_0px_#BFFCC6]">π-Shaped</h3>
+                        <p class="font-black text-arcade-green mt-2 tracking-widest uppercase border-b-2 border-arcade-green text-center" data-i18n="s3_nick">The Bridge Builder</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center">
+                        <div class="font-black text-xl mb-6 bg-arcade-dark text-arcade-green inline-block px-4 py-2 rounded transform -rotate-1 self-start shadow-sm" data-i18n="s3_desc">Two deep pillars. Where real magic happens.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-300">
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed mb-4" data-i18n="s3_story1">Here's the thing nobody tells you about having two deep skillsets: the value isn't additive. It's <strong>multiplicative.</strong> A lawyer who codes isn't worth a lawyer plus a developer. They're worth 3x either — because they can see the entire system that everyone else only sees half of.</p>
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed" data-i18n="s3_story2">Steve Jobs was famously π-shaped before it had a name — possessing deep pillars in calligraphy/design and computer technology. Brian May is a legendary guitarist and an astrophysicist. The intersection is where careers become irreplaceable.</p>
+                        </div>
+                        
+                        <div class="bg-arcade-bg border-4 border-arcade-dark p-5 rounded-xl shadow-[4px_4px_0px_#BFFCC6] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-dark text-white font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#BFFCC6]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-800 font-bold mt-2" data-i18n="s3_punch">A π-shaped person applies for a job posting. They meet 100% of the requirements — and then 80% of another job posting they also spotted. They apply to both. They get both offers.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-600">
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s3_ex1">Full-Stack Devs</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s3_ex2">Data Engineers</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s3_ex3">Creative Technologists</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. M-SHAPED -->
+                <div class="arcade-card bg-white border-8 flex flex-col lg:flex-row-reverse overflow-hidden shadow-[12px_12px_0px_#0F172A] reveal group">
+                    <div class="lg:w-1/3 bg-arcade-dark p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-l-8 border-arcade-dark relative">
+                        <div class="absolute top-4 right-4 bg-arcade-orange text-arcade-dark text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-white shadow-[2px_2px_0px_#FFB5A7]">88% AI Survival</div>
+                        <svg viewBox="0 0 140 120" class="w-40 h-36 mt-8 drop-shadow-[0_0_15px_rgba(255,181,167,0.6)] overflow-visible group-hover:animate-wiggle">
+                            <rect x="10" y="20" width="120" height="25" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                            <rect x="15" y="45" width="25" height="65" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                            <rect x="55" y="45" width="25" height="65" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                            <rect x="95" y="45" width="25" height="65" rx="4" fill="#FFB5A7" stroke="#FFF" stroke-width="5"/>
+                            <circle cx="50" cy="32" r="4" fill="#0F172A"/><circle cx="90" cy="32" r="4" fill="#0F172A"/>
+                        </svg>
+                        <h3 class="text-4xl font-black text-white mt-6 uppercase drop-shadow-[2px_2px_0px_#FFB5A7]">M-Shaped</h3>
+                        <p class="font-black text-arcade-orange mt-2 tracking-widest uppercase border-b-2 border-arcade-orange text-center" data-i18n="s4_nick">The Overachiever</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center">
+                        <div class="font-black text-xl mb-6 bg-arcade-orange text-arcade-dark inline-block px-4 py-2 rounded transform rotate-1 border-2 border-arcade-dark self-start shadow-sm" data-i18n="s4_desc">Three deep pillars. Pi's intimidating sibling.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-300">
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed mb-4" data-i18n="s4_story1">The M-shaped person is someone who kept going. They have <strong>three distinct domains of genuine mastery</strong>. This usually takes a decade or more. Christopher Nolan writes, directs, and produces. Think of India's Dr. Homi Bhabha—a world-class physicist, a visionary institution builder, and an international diplomat.</p>
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed" data-i18n="s4_story2">The danger of M is maintaining three pillars simultaneously. Real expertise demands continuous feeding. Three of those at once is genuinely hard. But the ones who pull it off? They sit at the intersection of three worlds nobody else even knows are connected.</p>
+                        </div>
+                        
+                        <div class="bg-arcade-bg border-4 border-arcade-dark p-5 rounded-xl shadow-[4px_4px_0px_#FFB5A7] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-dark text-white font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#FFB5A7]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-800 font-bold mt-2" data-i18n="s4_punch">An M-shaped person walks into a meeting about a medical product's legal liability and software architecture. Everyone else brought one specialist. They brought themselves. The meeting is 40 minutes shorter than planned.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-600">
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s4_ex1">CTOs</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s4_ex2">Lead Architects</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s4_ex3">Innovation Directors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. E-SHAPED -->
+                <div class="arcade-card bg-white border-8 flex flex-col lg:flex-row overflow-hidden shadow-[12px_12px_0px_#0F172A] reveal group">
+                    <div class="lg:w-1/3 bg-arcade-dark p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-r-8 border-arcade-dark relative">
+                        <div class="absolute top-4 left-4 bg-arcade-purple text-white text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-white shadow-[2px_2px_0px_#C5A3FF]">82% AI Survival</div>
+                        <svg viewBox="0 0 120 120" class="w-40 h-40 mt-8 drop-shadow-[0_0_15px_rgba(197,163,255,0.6)] overflow-visible group-hover:animate-float">
+                            <rect x="20" y="10" width="25" height="100" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                            <rect x="40" y="10" width="50" height="20" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                            <rect x="40" y="50" width="40" height="20" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                            <rect x="40" y="90" width="50" height="20" rx="4" fill="#C5A3FF" stroke="#FFF" stroke-width="5"/>
+                            <circle cx="32" cy="20" r="3" fill="#0F172A"/><circle cx="32" cy="30" r="3" fill="#0F172A"/>
+                        </svg>
+                        <h3 class="text-4xl font-black text-white mt-6 uppercase drop-shadow-[2px_2px_0px_#C5A3FF]">E-Shaped</h3>
+                        <p class="font-black text-arcade-purple mt-2 tracking-widest uppercase border-b-2 border-arcade-purple text-center" data-i18n="s5_nick">The Executor Engine</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center">
+                        <div class="font-black text-xl mb-6 bg-arcade-purple text-arcade-dark inline-block px-4 py-2 rounded transform -rotate-1 border-2 border-arcade-dark self-start shadow-sm" data-i18n="s5_desc">Four horizontal layers. One deep trunk.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-300">
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed mb-4" data-i18n="s5_story1">The E-shape is a different kind of shape — not more pillars of depth, but <strong>four distinct horizontal capabilities</strong> growing from one vertical trunk. The four E's: <strong>Expertise</strong> (deep craft), <strong>Experience</strong> (track record), <strong>Execution</strong> (ability to ship), and <strong>Exploration</strong> (curiosity).</p>
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed" data-i18n="s5_story2">Linus Torvalds isn't just an expert coder; he built Linux through relentless execution and community management. Most people have Expertise. Fewer have Experience. Very few have real Execution — the kind where they've actually shipped something significant, led a team through uncertainty, and lived with the consequences.</p>
+                        </div>
+                        
+                        <div class="bg-arcade-bg border-4 border-arcade-dark p-5 rounded-xl shadow-[4px_4px_0px_#C5A3FF] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-dark text-white font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#C5A3FF]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-800 font-bold mt-2" data-i18n="s5_punch">An E-shaped PM is in a meeting where someone says "we should really explore whether this is viable." The E-shaped PM says "I built a prototype last week. Here are the user test results." The meeting ends. A product ships.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-600">
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s5_ex1">VPs of Engineering</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s5_ex2">Principal Engineers</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s5_ex3">Operations Leads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. COMB-SHAPED -->
+                <div class="arcade-card bg-white border-8 flex flex-col lg:flex-row-reverse overflow-hidden shadow-[12px_12px_0px_#0F172A] reveal group">
+                    <div class="lg:w-1/3 bg-arcade-dark p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-l-8 border-arcade-dark relative">
+                        <div class="absolute top-4 right-4 bg-arcade-yellow text-arcade-dark text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-white shadow-[2px_2px_0px_#FFF58E]">94% AI Survival</div>
+                        <svg viewBox="0 0 160 100" class="w-48 h-32 mt-8 drop-shadow-[0_0_15px_rgba(255,245,142,0.6)] overflow-visible group-hover:animate-wiggle">
+                            <rect x="10" y="10" width="140" height="20" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                            <rect x="20" y="30" width="15" height="60" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                            <rect x="45" y="30" width="15" height="45" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                            <rect x="70" y="30" width="15" height="65" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                            <rect x="95" y="30" width="15" height="40" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                            <rect x="120" y="30" width="15" height="55" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="5"/>
+                        </svg>
+                        <h3 class="text-4xl font-black text-white mt-6 uppercase drop-shadow-[2px_2px_0px_#FFF58E]">Comb-Shaped</h3>
+                        <p class="font-black text-arcade-yellow mt-2 tracking-widest uppercase border-b-2 border-arcade-yellow text-center" data-i18n="s6_nick">The Legendary Unicorn</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center">
+                        <div class="font-black text-xl mb-6 bg-arcade-yellow text-arcade-dark inline-block px-4 py-2 rounded transform rotate-1 border-2 border-arcade-dark self-start shadow-sm" data-i18n="s6_desc">Many deep pillars. Vast breadth.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-300">
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed mb-4" data-i18n="s6_story1">The Comb is what happens when a T-shaped person keeps growing for twenty years and never stops. It's not a beginner's shape. It's the accumulated result of <strong>genuine curiosity applied relentlessly over decades.</strong> Leonardo da Vinci was Comb-shaped. Rabindranath Tagore was a poet, philosopher, painter, and educationalist.</p>
+                            <p class="font-bold text-slate-700 text-lg leading-relaxed" data-i18n="s6_story2">The comb's weakness is recruiters. LinkedIn is built for I-shaped and T-shaped people. A comb's CV reads like a fever dream — artist, engineer, investor, author, all somehow the same person.</p>
+                        </div>
+                        
+                        <div class="bg-arcade-bg border-4 border-arcade-dark p-5 rounded-xl shadow-[4px_4px_0px_#FFF58E] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-dark text-white font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#FFF58E]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-800 font-bold mt-2" data-i18n="s6_punch">A comb-shaped person sends their CV. The recruiter reads it. Calls their manager. The manager calls their manager. Three days later, someone creates a new job title specifically for this person. They accept. They immediately start changing things.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-600">
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s6_ex1">Serial Founders</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s6_ex2">Chief Strategy Officers</span>
+                            <span class="bg-white border-2 border-slate-300 px-3 py-1 rounded-full shadow-sm" data-i18n="s6_ex3">Polymaths</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. X-SHAPED (BOSS LEVEL) -->
+                <div class="arcade-card bg-gradient-to-r from-arcade-dark to-slate-900 border-8 border-arcade-pink flex flex-col lg:flex-row overflow-hidden shadow-[16px_16px_0px_#FF9CEE] reveal group transform scale-[1.03]">
+                    <div class="lg:w-1/3 bg-black/30 p-8 flex flex-col items-center justify-center border-b-8 lg:border-b-0 lg:border-r-8 border-arcade-pink relative">
+                        <div class="absolute top-4 left-4 bg-white text-arcade-dark text-xs font-black px-3 py-1 rounded-lg uppercase border-2 border-arcade-pink shadow-[2px_2px_0px_#FF9CEE]">96% AI Survival</div>
+                        <svg viewBox="0 0 100 100" class="w-48 h-48 mt-8 drop-shadow-[0_0_20px_rgba(255,156,238,0.8)] overflow-visible group-hover:animate-float">
+                            <path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="#FFF" stroke-width="20" stroke-linecap="round"/>
+                            <path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="#FF9CEE" stroke-width="10" stroke-linecap="round"/>
+                            <path d="M 30 10 L 50 -10 L 70 10 Z" fill="#FFF58E" stroke="#FFF" stroke-width="4" stroke-linejoin="round" class="animate-bounce-slow"/>
+                        </svg>
+                        <h3 class="text-5xl font-black text-white mt-6 uppercase tracking-widest drop-shadow-[2px_2px_0px_#FF9CEE]">X-Shaped</h3>
+                        <p class="font-black text-arcade-pink mt-2 tracking-widest uppercase border-b-2 border-arcade-pink text-center" data-i18n="s7_nick">The Leader</p>
+                    </div>
+                    <div class="lg:w-2/3 p-6 md:p-10 flex flex-col justify-center text-white">
+                        <div class="font-black text-xl mb-6 bg-arcade-pink text-arcade-dark inline-block px-4 py-2 rounded transform -rotate-1 border-2 border-white self-start shadow-sm" data-i18n="s7_desc">Craft meets leadership. Strategy meets execution.</div>
+                        
+                        <div class="mb-6 pl-4 border-l-4 border-slate-600">
+                            <p class="font-bold text-slate-300 text-lg leading-relaxed mb-4" data-i18n="s7_story1">The X is not a shape of knowledge — it's a shape of <strong>influence.</strong> The two axes are craft depth and leadership depth. Both have to be real. A leader who can't do the work loses the engineers. An engineer who can't lead loses the org. The X-shaped person sits at the cross-section.</p>
+                            <p class="font-bold text-slate-300 text-lg leading-relaxed" data-i18n="s7_story2">Satya Nadella is X-shaped. He came up as a deeply technical engineer—but rebuilt Microsoft not by writing code, but by rewriting its culture. Ratan Tata similarly combined deep industrial knowledge with visionary, empathetic leadership. Both axes, at the same time.</p>
+                        </div>
+                        
+                        <div class="bg-black/50 border-4 border-arcade-pink p-5 rounded-xl shadow-[4px_4px_0px_#FF9CEE] mb-6 relative mt-4">
+                            <span class="absolute -top-4 left-4 bg-arcade-pink text-arcade-dark font-black px-3 py-1 text-[10px] md:text-xs uppercase tracking-widest rounded shadow-[2px_2px_0px_#FFF]" data-i18n="punchline_label">Punchline</span>
+                            <p class="text-slate-100 font-bold mt-2" data-i18n="s7_punch">An X-shaped leader walks into a standup. The engineers respect them because they spotted the architectural flaw before anyone else. The board respects them because they turned that flaw into a strategic pivot. The intern is taking notes so fast their hand is cramping.</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 text-xs font-black uppercase tracking-widest text-slate-300">
+                            <span class="bg-transparent border-2 border-arcade-pink px-3 py-1 rounded-full shadow-sm" data-i18n="s7_ex1">CEOs & Founders</span>
+                            <span class="bg-transparent border-2 border-arcade-pink px-3 py-1 rounded-full shadow-sm" data-i18n="s7_ex2">CTOs</span>
+                            <span class="bg-transparent border-2 border-arcade-pink px-3 py-1 rounded-full shadow-sm" data-i18n="s7_ex3">Directors of Product</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 5: EVOLUTION MAP (Gamified Level Map - Escalator Pattern) -->
+    <section class="py-24 w-full relative z-10 border-b-8 border-arcade-dark bg-[#0F172A] overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 relative z-10 reveal">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-arcade-green text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-white mb-4 shadow-[2px_2px_0px_#FFF] tracking-widest text-sm uppercase" data-i18n="lvl5_tag">Level 5</div>
+                <h2 class="text-4xl md:text-5xl font-black text-arcade-yellow mb-4 uppercase" data-i18n="lvl5_title">Evolution Map 🗺️</h2>
+                <p class="font-bold text-slate-300 max-w-2xl mx-auto" data-i18n="lvl5_desc">Careers are no longer static titles. They are evolving geometries. Follow the path to unlock the next level of AI immunity.</p>
+            </div>
+            
+            <!-- Platformer Escalator Level Map UI -->
+            <div class="relative w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-end justify-between gap-6 md:gap-4 md:h-[400px] pb-10">
+                
+                <!-- SVG Dashed Line Escalator (Desktop) -->
+                <svg class="absolute top-0 left-[5%] w-[90%] h-full hidden md:block z-0" overflow="visible">
+                    <!-- Diagonal line pointing upwards right -->
+                    <line x1="0" y1="90%" x2="100%" y2="10%" stroke="url(#escalator-grad)" stroke-width="8" stroke-dasharray="16 16" class="animate-dash opacity-80" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="escalator-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#FF8B94" />
+                            <stop offset="50%" stop-color="#BFFCC6" />
+                            <stop offset="100%" stop-color="#FF9CEE" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <!-- SVG Dashed Line connecting nodes (Mobile) -->
+                <svg class="absolute top-[5%] left-1/2 h-[90%] w-4 transform -translate-x-1/2 md:hidden z-0" overflow="visible">
+                    <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#FF9CEE" stroke-width="6" stroke-dasharray="12 12" class="animate-dash opacity-60" stroke-linecap="round"/>
+                </svg>
+                
+                <!-- Staggered Nodes using margin-bottom for staircase effect on Desktop -->
+                <div class="relative z-10 flex flex-col items-center group cursor-pointer md:mb-[0px] hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-arcade-dark bg-arcade-red flex items-center justify-center text-3xl shadow-[4px_4px_0px_rgba(255,255,255,0.8)]">⛏️</div>
+                    <div class="mt-4 bg-white border-2 border-arcade-dark px-3 py-1 rounded font-black text-sm uppercase shadow-[2px_2px_0px_#FF8B94]">I-Shape</div>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center group cursor-pointer md:mb-[60px] hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-arcade-dark bg-arcade-blue flex items-center justify-center text-3xl shadow-[4px_4px_0px_rgba(255,255,255,0.8)]">🛠️</div>
+                    <div class="mt-4 bg-white border-2 border-arcade-dark px-3 py-1 rounded font-black text-sm uppercase shadow-[2px_2px_0px_#85E3FF]">T-Shape</div>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center group cursor-pointer md:mb-[120px] hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-arcade-dark bg-arcade-green flex items-center justify-center text-3xl shadow-[4px_4px_0px_rgba(255,255,255,0.8)]">⚖️</div>
+                    <div class="mt-4 bg-white border-2 border-arcade-dark px-3 py-1 rounded font-black text-sm uppercase shadow-[2px_2px_0px_#BFFCC6]">π / E Shape</div>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center group cursor-pointer md:mb-[180px] hover:scale-110 transition-transform">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-arcade-dark bg-arcade-orange flex items-center justify-center text-3xl shadow-[4px_4px_0px_rgba(255,255,255,0.8)]">🔮</div>
+                    <div class="mt-4 bg-white border-2 border-arcade-dark px-3 py-1 rounded font-black text-sm uppercase shadow-[2px_2px_0px_#FFB5A7]">M-Shape</div>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center group cursor-pointer md:mb-[240px] hover:scale-110 transition-transform">
+                    <span class="absolute bottom-[100%] left-1/2 transform -translate-x-1/2 -translate-y-2 text-4xl md:text-5xl animate-bounce-slow drop-shadow-[0_0_15px_#FFF58E] z-20">👑</span>
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-arcade-dark bg-arcade-pink flex items-center justify-center text-4xl shadow-[0_0_20px_#FF9CEE]">🚀</div>
+                    <div class="mt-4 bg-white border-2 border-arcade-dark px-3 py-1 rounded font-black text-base uppercase shadow-[2px_2px_0px_#FF9CEE]">X / Comb</div>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- LEVEL 6: SURVIVAL KIT (Cheat Sheet Pokédex Grid) -->
+    <section class="py-24 w-full relative z-10 reveal bg-arcade-pink border-b-8 border-arcade-dark overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-white text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-arcade-dark mb-4 transform -rotate-2 shadow-[2px_2px_0px_#0F172A] tracking-widest text-sm uppercase" data-i18n="lvl6_tag">Level 6</div>
+                <h2 class="text-4xl md:text-6xl font-black text-arcade-dark uppercase mb-4" data-i18n="lvl6_title">Cheat Sheet 🎒</h2>
+                <p class="font-bold text-slate-800 text-lg bg-white/50 inline-block px-4 py-2 rounded-xl border-2 border-arcade-dark border-dashed shadow-sm" data-i18n="lvl6_desc">Tap or hover cards to flip and review the roster.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Flip 1 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-red border-arcade-dark">
+                            <h4 class="font-black text-6xl mb-2 text-white drop-shadow-[2px_2px_0px_#0F172A]">I</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-dark bg-white px-3 py-1 rounded-full border-2 border-arcade-dark" data-i18n="cs1_nick">Specialist</p>
+                            <span class="text-xs font-bold text-white mt-4 uppercase tracking-widest drop-shadow-[1px_1px_0px_#0F172A]" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-red bg-white">
+                            <p class="text-sm font-bold text-arcade-dark mb-4" data-i18n="cs1_desc">Most vulnerable. AI does your one thing. Urgently need to add a horizontal bar.</p>
+                            <div class="bg-arcade-red text-white text-xs font-black p-2 rounded border-2 border-arcade-dark uppercase w-full shadow-[2px_2px_0px_#0F172A]" data-i18n="cs1_fix">Fix: Collaborate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip 2 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-blue border-arcade-dark">
+                            <h4 class="font-black text-6xl mb-2 text-white drop-shadow-[2px_2px_0px_#0F172A]">T</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-dark bg-white px-3 py-1 rounded-full border-2 border-arcade-dark" data-i18n="cs2_nick">Connector</p>
+                            <span class="text-xs font-bold text-white mt-4 uppercase tracking-widest drop-shadow-[1px_1px_0px_#0F172A]" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-blue bg-white">
+                            <p class="text-sm font-bold text-arcade-dark mb-4" data-i18n="cs2_desc">Solid foundation. Breadth means you can use AI across domains. The startup MVP.</p>
+                            <div class="bg-arcade-blue text-arcade-dark text-xs font-black p-2 rounded border-2 border-arcade-dark uppercase w-full shadow-[2px_2px_0px_#0F172A]" data-i18n="cs2_fix">Fix: Add 2nd Pillar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip 3 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-green border-arcade-dark">
+                            <h4 class="font-black text-6xl mb-2 text-white drop-shadow-[2px_2px_0px_#0F172A]">π</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-dark bg-white px-3 py-1 rounded-full border-2 border-arcade-dark" data-i18n="cs3_nick">Dual Master</p>
+                            <span class="text-xs font-bold text-white mt-4 uppercase tracking-widest drop-shadow-[1px_1px_0px_#0F172A]" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-green bg-white">
+                            <p class="text-sm font-bold text-arcade-dark mb-4" data-i18n="cs3_desc">Very strong. Two pillars means two AI amplifiers. The synthesis is fully human.</p>
+                            <div class="bg-arcade-green text-arcade-dark text-xs font-black p-2 rounded border-2 border-arcade-dark uppercase w-full shadow-[2px_2px_0px_#0F172A]" data-i18n="cs3_fix">Fix: Execute</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip 4 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-purple border-arcade-dark">
+                            <h4 class="font-black text-6xl mb-2 text-white drop-shadow-[2px_2px_0px_#0F172A]">E</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-dark bg-white px-3 py-1 rounded-full border-2 border-arcade-dark" data-i18n="cs4_nick">Expander</p>
+                            <span class="text-xs font-bold text-white mt-4 uppercase tracking-widest drop-shadow-[1px_1px_0px_#0F172A]" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-purple bg-white">
+                            <p class="text-sm font-bold text-arcade-dark mb-4" data-i18n="cs4_desc">Execution + Exploration. You get things built and shipped in the real world.</p>
+                            <div class="bg-arcade-purple text-arcade-dark text-xs font-black p-2 rounded border-2 border-arcade-dark uppercase w-full shadow-[2px_2px_0px_#0F172A]" data-i18n="cs4_fix">Fix: Build 3rd Pillar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip 5 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-orange border-arcade-dark">
+                            <h4 class="font-black text-6xl mb-2 text-white drop-shadow-[2px_2px_0px_#0F172A]">M</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-dark bg-white px-3 py-1 rounded-full border-2 border-arcade-dark" data-i18n="cs5_nick">Triple Master</p>
+                            <span class="text-xs font-bold text-white mt-4 uppercase tracking-widest drop-shadow-[1px_1px_0px_#0F172A]" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-orange bg-white">
+                            <p class="text-sm font-bold text-arcade-dark mb-4" data-i18n="cs5_desc">Excellent. Three domains is three angles. Highly rare, hard to maintain.</p>
+                            <div class="bg-arcade-orange text-arcade-dark text-xs font-black p-2 rounded border-2 border-arcade-dark uppercase w-full shadow-[2px_2px_0px_#0F172A]" data-i18n="cs5_fix">Fix: Avoid Rust</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip 6 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-yellow border-arcade-dark">
+                            <h4 class="font-black text-4xl mb-2 text-arcade-dark drop-shadow-[2px_2px_0px_#FFF]">COMB</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-dark bg-white px-3 py-1 rounded-full border-2 border-arcade-dark" data-i18n="cs6_nick">Unicorn</p>
+                            <span class="text-xs font-bold text-arcade-dark mt-4 uppercase tracking-widest drop-shadow-[1px_1px_0px_#FFF]" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-yellow bg-arcade-dark text-white">
+                            <p class="text-sm font-bold mb-4" data-i18n="cs6_desc">Maximum resilience. Every tooth gets an AI amplifier. You're a one-person lab.</p>
+                            <div class="bg-arcade-yellow text-arcade-dark text-xs font-black p-2 rounded border-2 border-white uppercase w-full shadow-[2px_2px_0px_#FFF]" data-i18n="cs6_fix">Goal: Orchestrate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flip 7 (Boss) -->
+                <div class="flip-card sm:col-span-2" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front p-4 bg-arcade-dark border-arcade-pink">
+                            <h4 class="font-black text-6xl mb-2 text-white drop-shadow-[0_0_10px_#FF9CEE]">X</h4>
+                            <p class="font-black uppercase tracking-widest text-sm text-arcade-pink bg-white/10 px-3 py-1 rounded-full border-2 border-arcade-pink" data-i18n="cs7_nick">The Leader</p>
+                            <span class="text-xs font-bold text-slate-400 mt-4 uppercase tracking-widest" data-i18n="tap_flip">Tap to flip ↺</span>
+                        </div>
+                        <div class="flip-card-back border-arcade-pink bg-gradient-to-br from-arcade-dark to-slate-900 text-white">
+                            <p class="text-base font-bold mb-4" data-i18n="cs7_desc">Near-immune. Leadership, judgment, and trust-building across humans is the last frontier AI cannot touch.</p>
+                            <div class="bg-arcade-pink text-arcade-dark text-sm font-black p-2 rounded border-2 border-white uppercase w-full max-w-xs shadow-[2px_2px_0px_#FFF]" data-i18n="cs7_fix">Status: Apex</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 7: SELF-DISCOVERY (The Quiz & Viral Share) -->
+    <section class="py-24 px-4 w-full relative z-10 reveal bg-white border-b-8 border-arcade-dark bg-polka">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block bg-arcade-yellow text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-arcade-dark mb-4 transform rotate-1 shadow-[2px_2px_0px_#0F172A] tracking-widest text-sm uppercase" data-i18n="lvl7_tag">Level 7</div>
+            <h2 class="text-4xl md:text-6xl font-black text-arcade-dark mb-4 uppercase" data-i18n="lvl7_title">Self-Discovery 🔍</h2>
+            <p class="text-xl font-bold text-slate-600 mb-10 max-w-2xl mx-auto bg-white border-2 border-arcade-dark p-3 rounded-lg border-dashed" data-i18n="lvl7_desc">One question. Honest answer. If your job disappeared tomorrow, how would you describe what you bring to the next one?</p>
+
+            <!-- Quiz Container -->
+            <div id="quiz-container" class="arcade-card bg-arcade-bg p-6 md:p-10 border-8 mx-auto relative overflow-hidden text-left shadow-[12px_12px_0px_#0F172A]">
+                <div class="flex flex-col gap-4 relative z-10" id="quiz-options">
+                    <button class="qopt group" onclick="submitQuiz('I', 'Specialist')">
+                        <span class="bg-arcade-dark text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black shrink-0 mr-4 border-2 border-arcade-red group-hover:scale-110 transition-transform shadow-[2px_2px_0px_#FF8B94]">A</span> 
+                        <span data-i18n="q_I" class="leading-snug">I have one specific expertise that I've gone very deep on.</span>
+                    </button>
+                    <button class="qopt group" onclick="submitQuiz('T', 'Connector')">
+                        <span class="bg-arcade-dark text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black shrink-0 mr-4 border-2 border-arcade-blue group-hover:scale-110 transition-transform shadow-[2px_2px_0px_#85E3FF]">B</span> 
+                        <span data-i18n="q_T" class="leading-snug">I have a main skill but I can work across many areas and teams.</span>
+                    </button>
+                    <button class="qopt group" onclick="submitQuiz('Pi or M', 'Dual/Triple Master')">
+                        <span class="bg-arcade-dark text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black shrink-0 mr-4 border-2 border-arcade-green group-hover:scale-110 transition-transform shadow-[2px_2px_0px_#BFFCC6]">C</span> 
+                        <span data-i18n="q_Pi" class="leading-snug">I genuinely have depth in two or three separate domains.</span>
+                    </button>
+                    <button class="qopt group" onclick="submitQuiz('X', 'Leader')">
+                        <span class="bg-arcade-dark text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black shrink-0 mr-4 border-2 border-arcade-pink group-hover:scale-110 transition-transform shadow-[2px_2px_0px_#FF9CEE]">D</span> 
+                        <span data-i18n="q_X" class="leading-snug">I lead people and strategy as much as I do the actual craft.</span>
+                    </button>
+                    <button class="qopt group" onclick="submitQuiz('Comb', 'Polymath')">
+                        <span class="bg-arcade-dark text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-black shrink-0 mr-4 border-2 border-arcade-yellow group-hover:scale-110 transition-transform shadow-[2px_2px_0px_#FFF58E]">E</span> 
+                        <span data-i18n="q_Comb" class="leading-snug">I have expertise across so many areas it's hard to explain in one sentence.</span>
+                    </button>
+                </div>
+
+                <!-- Viral Share Result Container -->
+                <div id="quiz-results" class="hidden flex flex-col items-center text-center relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-black mb-2 uppercase tracking-widest text-slate-500" data-i18n="res_title">You Are</h3>
+                    <h2 id="result-shape" class="text-5xl md:text-6xl font-black text-arcade-dark mb-2 uppercase"></h2>
+                    <p id="result-title" class="text-xl font-bold text-arcade-pink bg-arcade-dark px-6 py-2 rounded-full border-2 border-arcade-dark mb-8 shadow-[4px_4px_0px_#FF9CEE]"></p>
+                    
+                    <!-- Gamified Share Card Preview -->
+                    <div id="share-card-preview" class="bg-white border-4 border-arcade-dark rounded-2xl p-6 w-full max-w-lg mb-8 shadow-[6px_6px_0px_#0F172A] transform -rotate-1 relative">
+                        <div class="absolute -top-4 -right-4 text-4xl animate-bounce">✨</div>
+                        <p class="font-black text-slate-400 uppercase tracking-widest text-xs mb-4" data-i18n="share_label">Your personalized share text:</p>
+                        <div class="bg-[#F8FAFC] border-2 border-dashed border-slate-300 p-4 rounded-xl text-left font-bold text-slate-800 text-base md:text-lg leading-relaxed font-mono">
+                            <span data-i18n="share_t1">"I just discovered my career skill shape is</span> <span id="share-text-shape" class="text-arcade-pink font-black"></span>! 🚀
+                            <br><br><span data-i18n="share_t2">The world doesn't just need specialists anymore. What's your shape? Find out here:"</span>
+                            <br><span class="text-blue-500 underline text-sm mt-2 block">https://hariprav.in/skill-shapes</span>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Share Actions with Auto-Copy -->
+                    <div class="flex flex-col w-full max-w-lg gap-4 mb-8">
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 relative">
+                            <button onclick="shareSocial('linkedin')" title="Share to LinkedIn" class="arcade-btn bg-[#0077b5] text-white px-2 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#005E93]">
+                                💼 <span class="hidden md:inline text-xs font-bold">LinkedIn</span>
+                            </button>
+                            <button onclick="shareSocial('twitter')" title="Share to Twitter" class="arcade-btn bg-[#1DA1F2] text-white px-2 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#0C85D0]">
+                                🐦 <span class="hidden md:inline text-xs font-bold">Twitter</span>
+                            </button>
+                            <button onclick="shareSocial('facebook')" title="Share to Facebook" class="arcade-btn bg-[#1877F2] text-white px-2 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#0e5fc9]">
+                                📘 <span class="hidden md:inline text-xs font-bold">Facebook</span>
+                            </button>
+                            <button onclick="shareSocial('whatsapp')" title="Share to WhatsApp" class="arcade-btn bg-[#25D366] text-white px-2 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#1da850]">
+                                💬 <span class="hidden md:inline text-xs font-bold">WhatsApp</span>
+                            </button>
+                        </div>
+                        <button onclick="copyShareText()" class="w-full text-arcade-dark border-2 border-arcade-dark bg-white px-6 py-2 rounded-xl flex items-center justify-center gap-2 font-black text-sm uppercase hover:bg-slate-100 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            <span id="share-btn-text" data-i18n="btn_copy">Just Copy Text</span>
+                        </button>
+                        
+                        <p class="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest mt-2 bg-slate-100 py-1 rounded border-2 border-dashed border-slate-300" data-i18n="share_tip">Note: LinkedIn & FB block pre-filled text. We will copy it for you to paste!</p>
+                    </div>
+
+                    <button onclick="resetQuiz()" class="text-sm font-bold text-slate-500 hover:text-arcade-dark underline uppercase tracking-widest" data-i18n="btn_retake">↺ Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEVEL 8: THE FINAL TRUTH (Dark Animated Closure) -->
+    <section class="py-32 px-4 w-full relative z-10 border-t-8 border-arcade-pink bg-dark-grid overflow-hidden">
+        
+        <!-- Subtle background floaters -->
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <svg class="absolute top-[20%] left-[5%] w-16 h-16 animate-float" viewBox="0 0 100 120"><rect x="35" y="20" width="30" height="90" rx="4" fill="#FFF58E" stroke="#FFF" stroke-width="2"/></svg>
+            <svg class="absolute bottom-[30%] right-[10%] w-20 h-20 animate-float-fast" viewBox="0 0 120 120"><rect x="10" y="30" width="100" height="25" rx="4" fill="#FF9CEE" stroke="#FFF" stroke-width="2"/><rect x="45" y="55" width="30" height="55" rx="4" fill="#FF9CEE" stroke="#FFF" stroke-width="2"/></svg>
+            <svg class="absolute top-[10%] right-[25%] w-12 h-12 animate-wiggle" viewBox="0 0 100 100"><path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="#85E3FF" stroke-width="10" stroke-linecap="round"/></svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+            <div class="inline-block bg-arcade-pink text-arcade-dark font-black px-4 py-1 rounded-lg border-2 border-white mb-8 shadow-[0_0_15px_#FF9CEE] tracking-widest text-sm uppercase" data-i18n="lvl8_tag">Level 8: The Final Truth</div>
+            
+            <p class="text-2xl md:text-4xl font-black text-white leading-relaxed mb-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" data-i18n="final_p1">
+                The uncomfortable truth is this: most people have never thought about their shape.
+            </p>
+            
+            <div class="bg-white/10 border-l-4 border-arcade-yellow p-6 md:p-8 rounded-r-xl mb-10 text-left backdrop-blur-sm">
+                <p class="text-lg md:text-2xl font-bold text-slate-300 leading-relaxed mb-4" data-i18n="final_p2">
+                    They've thought about their job title. Their salary band. Their industry. But not the actual <span class="text-arcade-yellow">geometry of their knowledge</span> — how deep it goes, how wide it spreads, how many pillars it rests on.
+                </p>
+                <p class="text-lg md:text-2xl font-bold text-slate-300 leading-relaxed" data-i18n="final_p3">
+                    And in a world where AI is rapidly doing the single-pillar work, the geometry is everything. Not because shapes are a magic career formula, but because they force you to ask the right question: <span class="text-arcade-green">am I building depth, breadth, or both?</span> Am I growing the horizontal bar, or just drilling deeper in the same hole?
+                </p>
+            </div>
+
+            <div class="inline-block bg-[#0B1120] border-4 border-arcade-blue p-6 rounded-xl shadow-[8px_8px_0px_#85E3FF] transform -rotate-1 hover:rotate-1 transition-transform mb-10">
+                <p class="text-xl md:text-3xl font-black text-arcade-blue italic" data-i18n="final_quote">
+                    "The best shapes aren't born.<br>They're built — one deliberate expansion at a time."
+                </p>
+            </div>
+
+            <p class="text-lg md:text-2xl font-bold text-slate-400 max-w-2xl mx-auto" data-i18n="final_p4">
+                You don't have to be a comb by next Tuesday. But you should probably know what shape you are today — and have a rough idea of which direction you're growing in.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER: CURATED BY HARI PRAVIN -->
+    <footer id="footer-section" class="pt-24 pb-48 md:pb-32 bg-dark-stripes text-white text-center relative overflow-hidden border-t-8 border-arcade-green">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col items-center relative z-10">
+            
+            <h2 class="text-2xl font-black mb-10 text-arcade-green transform -rotate-1 uppercase tracking-widest" data-i18n="footer_title">Keep Learning, Keep Adapting 🧠</h2>
+
+            <!-- Custom Cute Branding Section -->
+            <div class="arcade-card interactive bg-white text-arcade-dark inline-flex flex-col items-center py-6 px-10 border-4 border-arcade-dark transform rotate-1 hover:rotate-0 mb-8 shadow-[8px_8px_0px_#85E3FF]">
+                <div class="text-lg font-bold mb-4 text-center">
+                    <span class="block text-sm md:text-base mb-1 text-slate-500 uppercase tracking-widest">Curated & Designed by</span>
+                    <span class="font-black text-3xl text-arcade-pink underline decoration-4 underline-offset-4 inline-block mt-1">Hari Pravin</span> 🎨
+                </div>
+                
+                <div class="flex gap-4 mb-6">
+                    <!-- Beacons.ai -->
+                    <a href="https://beacons.ai/haripravin" target="_blank" rel="noopener noreferrer" class="hover:scale-125 hover:-rotate-6 transition-transform" aria-label="Beacons">
+                        <svg class="w-10 h-10 fill-arcade-dark" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/haripravin/" target="_blank" rel="noopener noreferrer" class="hover:scale-125 hover:rotate-6 transition-transform" aria-label="LinkedIn">
+                        <svg class="w-10 h-10 fill-[#0a66c2]" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/hariij" target="_blank" rel="noopener noreferrer" class="hover:scale-125 hover:-rotate-6 transition-transform" aria-label="Facebook">
+                        <svg class="w-10 h-10 fill-[#1877f2]" viewBox="0 0 24 24">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Chai4Me Widget -->
+                <a href="https://chai4.me/hari" target="_blank" title="Support hari on Chai4Me" class="arcade-btn bg-[#F8FAFC] px-6 py-4 rounded-xl flex flex-col items-center justify-center hover:-translate-y-1 w-full text-decoration-none">
+                    <img src="https://chai4.me/icons/wordmark.png" alt="Chai4Me" class="h-6 object-contain mb-2"/>
+                    <span class="text-arcade-dark font-black text-xs md:text-sm text-center leading-relaxed" data-i18n="footer_chai_long">If you found this guide useful,<br/>support the creator with a tea ☕</span>
+                </a>
+            </div>
+
+            <!-- Visitor Counter -->
+            <div class="flex flex-col items-center mt-2 mb-8 z-10">
+                <p class="text-xs font-black text-arcade-pink mb-2 tracking-widest uppercase">Career Shapes Discovered</p>
+                <div class="bg-white border-4 border-arcade-dark rounded-xl overflow-hidden shadow-[4px_4px_0px_#0F172A] transform -rotate-1 hover:rotate-1 transition-transform">
+                    <img src="https://api.visitorbadge.io/api/visitors?path=skill_shapes_gamified&label=PLAYERS&labelColor=%230F172A&countColor=%23FF9CEE" alt="Views" class="h-8" />
+                </div>
+            </div>
+
+            <!-- Stylized Stamps -->
+            <div class="flex flex-wrap justify-center gap-4 mt-4">
+                <div class="bg-arcade-blue text-arcade-dark font-black text-sm px-4 py-2 border-2 border-dashed border-arcade-dark transform -rotate-3 uppercase">💡 Career Strategy</div>
+                <div class="bg-arcade-green text-arcade-dark font-black text-sm px-4 py-2 border-2 border-dashed border-arcade-dark transform rotate-2 uppercase">🤖 AI Survival</div>
+                <div class="bg-arcade-yellow text-arcade-dark font-black text-sm px-4 py-2 border-2 border-dashed border-arcade-dark transform -rotate-1 uppercase">🔓 Unlock Your Potential</div>
+                <div class="bg-arcade-pink text-arcade-dark font-black text-sm px-4 py-2 border-2 border-dashed border-arcade-dark transform rotate-3 uppercase">❤️ With Love from Chennai</div>
+                <div class="bg-white text-arcade-dark font-black text-sm px-4 py-2 border-2 border-dashed border-arcade-dark transform -rotate-2 uppercase">🦁 Make in India</div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // 1. Scroll Reveal Animations & AI Bar Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const AI_DATA = [
+                { id: 'I', label: 'I-Shaped', subtitle: 'The Deep Diver', score: 18, color: '#FF8B94', desc: 'High Risk', svg: '<svg viewBox="0 0 100 120" class="w-full h-full"><rect x="35" y="20" width="30" height="90" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/></svg>' },
+                { id: 'T', label: 'T-Shaped', subtitle: 'The Versatile Collaborator', score: 72, color: '#85E3FF', desc: 'Strong', svg: '<svg viewBox="0 0 120 120" class="w-full h-full"><rect x="10" y="30" width="100" height="25" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="45" y="55" width="30" height="55" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/></svg>' },
+                { id: 'Pi', label: 'Pi-Shaped', subtitle: 'The Bridge Builder', score: 84, color: '#BFFCC6', desc: 'Very Strong', svg: '<svg viewBox="0 0 120 120" class="w-full h-full"><rect x="15" y="20" width="90" height="25" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="25" y="45" width="25" height="65" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="70" y="45" width="25" height="65" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/></svg>' },
+                { id: 'E', label: 'E-Shaped', subtitle: 'The Executor Engine', score: 82, color: '#C5A3FF', desc: 'Very Strong', svg: '<svg viewBox="0 0 120 120" class="w-full h-full"><rect x="20" y="10" width="25" height="100" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="40" y="10" width="50" height="20" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="40" y="50" width="40" height="20" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="40" y="90" width="50" height="20" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/></svg>' },
+                { id: 'M', label: 'M-Shaped', subtitle: 'The Overachiever', score: 88, color: '#FFB5A7', desc: 'Excellent', svg: '<svg viewBox="0 0 140 120" class="w-full h-full"><rect x="10" y="20" width="120" height="25" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="15" y="45" width="25" height="65" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="55" y="45" width="25" height="65" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="95" y="45" width="25" height="65" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/></svg>' },
+                { id: 'Comb', label: 'Comb Shaped', subtitle: 'The Legendary Unicorn', score: 94, color: '#FFF58E', desc: 'Max Resilience', svg: '<svg viewBox="0 0 160 100" class="w-full h-full"><rect x="10" y="10" width="140" height="20" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="20" y="30" width="15" height="60" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="45" y="30" width="15" height="45" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="70" y="30" width="15" height="65" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="95" y="30" width="15" height="40" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/><rect x="120" y="30" width="15" height="55" rx="4" fill="currentColor" stroke="#0F172A" stroke-width="5"/></svg>' },
+                { id: 'X', label: 'X-Shaped', subtitle: 'The Leader', score: 96, color: '#FF9CEE', desc: 'Near-Immune', svg: '<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="#0F172A" stroke-width="15" stroke-linecap="round"/><path d="M 20 20 L 80 80 M 80 20 L 20 80" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>' }
+            ];
+
+            const container = document.getElementById('ai-grid-container');
+            if (container) {
+                AI_DATA.forEach(d => {
+                    let spanClass = '';
+                    if (d.id === 'X') {
+                        spanClass = 'col-span-2 md:col-span-3 lg:col-span-2';
+                    }
+
+                    container.innerHTML += `
+                        <div class="arcade-card bg-white border-4 border-arcade-dark relative overflow-hidden flex flex-col items-center pt-6 pb-4 px-4 h-64 md:h-72 group shadow-[6px_6px_0px_#0F172A] ${spanClass}">
+                            <!-- Liquid Fill Background -->
+                            <div class="absolute bottom-0 left-0 w-full transition-all duration-[1500ms] ease-out wave-fill-element" style="height: 0%; background-color: ${d.color};" data-target="${d.score}">
+                                <svg class="absolute -top-4 left-0 w-[200%] h-5 animate-wave-flow opacity-90" viewBox="0 0 100 20" preserveAspectRatio="none" fill="${d.color}">
+                                    <path d="M0,10 C25,20 25,0 50,10 C75,20 75,0 100,10 L100,20 L0,20 Z"/>
+                                </svg>
+                                <!-- Glossy overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent pointer-events-none mix-blend-overlay"></div>
+                                <div class="absolute top-2 left-4 w-2 h-2 bg-white/70 rounded-full blur-[1px]"></div>
+                                <div class="absolute top-6 right-8 w-4 h-4 bg-white/50 rounded-full blur-[2px]"></div>
+                            </div>
+                            
+                            <!-- Content (z-10 to stay above liquid) -->
+                            <div class="relative z-10 flex flex-col items-center h-full w-full">
+                                <span class="bg-arcade-dark text-white px-3 py-1 rounded-full text-[10px] md:text-xs uppercase font-black tracking-widest shadow-[2px_2px_0px_rgba(255,255,255,0.4)] mb-3 border-2 border-white/20" data-i18n="ai_desc_${d.id}">${d.desc}</span>
+                                
+                                <div class="w-14 h-14 md:w-16 md:h-16 mb-2 drop-shadow-[0_2px_0_#FFF] group-hover:scale-110 transition-transform text-arcade-dark group-hover:animate-wiggle">
+                                    ${d.svg}
+                                </div>
+                                
+                                <div class="flex flex-col items-center bg-white/70 backdrop-blur-md px-4 py-2 rounded-xl border border-white/80 shadow-sm mt-auto w-full relative overflow-hidden group-hover:-translate-y-1 transition-transform">
+                                    <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/60 to-transparent pointer-events-none"></div>
+                                    <h4 class="font-black text-lg md:text-xl uppercase text-arcade-dark relative z-10" data-i18n="ai_label_${d.id}">${d.label}</h4>
+                                    <p class="font-bold text-[9px] md:text-[10px] uppercase tracking-widest text-slate-800 text-center mb-1 relative z-10 line-clamp-1" data-i18n="ai_sub_${d.id}">${d.subtitle}</p>
+                                    <div class="mt-1 text-3xl md:text-4xl font-black text-arcade-dark relative z-10 drop-shadow-sm">${d.score}%</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Trigger Liquid Wave Bars
+                        if (entry.target.id === 'ai-chart-section' || entry.target.contains(document.getElementById('ai-grid-container'))) {
+                            setTimeout(() => {
+                                document.querySelectorAll('.wave-fill-element').forEach(bar => {
+                                    bar.style.height = bar.getAttribute('data-target') + '%';
+                                });
+                            }, 300);
+                        }
+                    } else {
+                        // Remove class when out of view so it repeats infinitely
+                        entry.target.classList.remove('active');
+                        // Optionally reset wave bars so they refill every time
+                        if (entry.target.id === 'ai-chart-section' || entry.target.contains(document.getElementById('ai-grid-container'))) {
+                            document.querySelectorAll('.wave-fill-element').forEach(bar => {
+                                bar.style.height = '0%';
+                            });
+                        }
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+        });
+
+        // 2. Quiz & Viral Share Logic
+        window.currentShapeObj = null;
+
+        window.submitQuiz = function(shape, title) {
+            window.currentShapeObj = { shape, title };
+            const quizOptions = document.getElementById('quiz-options');
+            const quizResults = document.getElementById('quiz-results');
+            if (quizOptions) quizOptions.classList.add('hidden');
+            if (quizResults) quizResults.classList.remove('hidden');
+            
+            const shapeTitle = document.getElementById('result-shape');
+            const resultTitle = document.getElementById('result-title');
+            const shareShape = document.getElementById('share-text-shape');
+            
+            if(shapeTitle) shapeTitle.innerText = shape + "-SHAPED";
+            if(resultTitle) resultTitle.innerText = title;
+            if(shareShape) shareShape.innerText = shape + "-Shaped";
+            
+            if (quizResults) quizResults.classList.add('animate-slide-up');
+        };
+
+        window.resetQuiz = function() {
+            window.currentShapeObj = null;
+            const quizOptions = document.getElementById('quiz-options');
+            const quizResults = document.getElementById('quiz-results');
+            if (quizResults) {
+                quizResults.classList.add('hidden');
+                quizResults.classList.remove('animate-slide-up');
+            }
+            if (quizOptions) quizOptions.classList.remove('hidden');
+        };
+
+        const getShareText = () => {
+            if(!window.currentShapeObj) return "";
+            const isTamil = window.currentLang === 'ta';
+            if (isTamil) {
+                return `எனது தொழில் திறன் வடிவம் ${window.currentShapeObj.shape}-Shaped என்பதை இப்போது தான் கண்டறிந்தேன்! 🚀\n\nஉலகிற்கு இனி நிபுணர்கள் மட்டும் போதாது. உங்கள் வடிவம் என்ன?\n\nஇங்கே கண்டறியவும்: https://hariprav.in/skill-shapes`;
+            }
+            return `I just discovered my career skill shape is ${window.currentShapeObj.shape}-Shaped! 🚀\n\nThe world doesn't just need specialists anymore. What's your shape?\n\nFind out here: https://hariprav.in/skill-shapes`;
+        };
+
+        // Custom Toast Notification System
+        function showToast() {
+            const toast = document.getElementById('custom-toast');
+            if (toast) {
+                toast.className = "bg-arcade-dark text-white border-4 border-arcade-green shadow-[4px_4px_0px_#BFFCC6] rounded-xl px-6 py-4 flex items-center gap-3 w-[90%] max-w-md show";
+                
+                // Auto hide after 3.5 seconds
+                setTimeout(() => {
+                    toast.className = "bg-arcade-dark text-white border-4 border-arcade-green shadow-[4px_4px_0px_#BFFCC6] rounded-xl px-6 py-4 flex items-center gap-3 w-[90%] max-w-md hide";
+                    setTimeout(() => { toast.style.display = 'none'; toast.className = ""; }, 300);
+                }, 3500);
+            }
+        }
+
+        // Improved Copy Function (returns Promise)
+        window.copyShareText = function() {
+            return new Promise((resolve) => {
+                const text = getShareText();
+                
+                // Fallback element
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                textArea.style.top = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                const btnTextElement = document.getElementById('share-btn-text');
+                const oldText = btnTextElement ? btnTextElement.innerText : "Just Copy Text";
+                
+                try {
+                    document.execCommand('copy');
+                    showToast();
+                    if (btnTextElement) {
+                        btnTextElement.innerText = window.currentLang === 'en' ? "COPIED! ✨" : "நகலெடுக்கப்பட்டது! ✨";
+                        setTimeout(() => { btnTextElement.innerText = oldText; }, 2000);
+                    }
+                    resolve(true);
+                } catch (err) {
+                    console.error("Copy failed", err);
+                    if (btnTextElement) {
+                        btnTextElement.innerText = "FAILED ❌";
+                        setTimeout(() => { btnTextElement.innerText = oldText; }, 2000);
+                    }
+                    resolve(false);
+                }
+                textArea.remove();
+            });
+        };
+
+        // Bulletproof Share Flow (Copy -> Show Toast -> Open App)
+        window.shareSocial = async function(platform) {
+            // 1. Force copy to clipboard first (solves LinkedIn/FB issue)
+            await copyShareText();
+
+            // 2. Open platform with URL and/or text after a tiny delay so they see the toast
+            setTimeout(() => {
+                const text = encodeURIComponent(getShareText());
+                const urlEncoded = encodeURIComponent('https://hariprav.in/skill-shapes');
+                
+                if (platform === 'twitter') {
+                    window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank');
+                } else if (platform === 'linkedin') {
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${urlEncoded}`, '_blank');
+                } else if (platform === 'facebook') {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${urlEncoded}`, '_blank');
+                } else if (platform === 'whatsapp') {
+                    window.open(`https://wa.me/?text=${text}`, '_blank');
+                }
+            }, 600); 
+        };
+
+        // 3. Localization Dictionary (English / Tamil)
+        window.currentLang = 'en';
+        const i18n = {
+            en: {
+                "float_chai": "Enjoying? Support with a tea ☕",
+                "hero_badge1": "Player 1 Ready 🕹️",
+                "hero_badge2": "Career Strategy 🗺️",
+                "hero_badge3": "Unlock Your Potential 🔓",
+                "hero_title_1": "Choose Your",
+                "hero_title_2": "Career Shape",
+                "hero_subtitle": "Before AI chooses it for you.",
+                "btn_start": "Discover Your Shape",
+                
+                "setup_tab": "PROLOGUE 📂",
+                "setup_stamp": "Top Secret",
+                "setup_quote_1": "\"What do you do?\" is the wrong question.",
+                "setup_quote_2": "The right question is: \"What shape are you?\"",
+                "setup_p1": "In the 1980s, McKinsey had a problem. They were hiring brilliant specialists — people who knew everything about one thing — and watching them fail spectacularly when projects needed breadth, judgment, and cross-functional collaboration. So they invented a term internally: the <strong class=\"bg-yellow-200 px-1 border border-yellow-400\">\"T-shaped person.\"</strong> Someone with real depth in one area, but enough breadth to play well with others.",
+                "setup_p2": "The concept leaked out. IDEO's Tim Brown made it famous. Agile teams adopted it. And then — slowly, quietly — people started realising the T was just the beginning. There were more shapes. A lot more.",
+                "setup_p3": "This is the complete guide to all of them. And why — right now, in the AI Era — understanding your shape isn't optional anymore.",
+                
+                "lvl1_tag": "Level 1",
+                "lvl1_title": "The Great Disruption 🤖",
+                "lvl1_desc": "Let's be blunt about what's happening globally.",
+                "stat_1": "Full-time jobs exposed to automation<br>(Goldman Sachs)",
+                "stat_2": "Of core worker skills expected to disrupt<br>(WEF)",
+                "stat_3": "New AI-augmented roles emerging globally<br>(WEF)",
+                "stat_4": "Of tasks have high automation potential<br>(McKinsey)",
+                "stat_5": "Productivity boost for cross-domain AI<br>(Harvard/BCG)",
+                "stat_6": "Routine jobs displaced globally<br>(WEF)",
+
+                "lvl2_tag": "Level 2",
+                "lvl2_title": "The Specialist Killer ⚔️",
+                "ai_vs_1": "The Specialist Killer",
+                "ai_vs_2": "The Human Shield",
+                "ai_p1": "AI is a specialist-killing machine. It can pass the bar exam. Diagnose skin cancer better than dermatologists. Write code, generate designs, summarise legal documents. Every pure I-shaped knowledge worker is staring down the barrel of a technology that does their one deep thing — fast, cheap, tirelessly.",
+                "ai_p2": "But here's what AI cannot do: <strong>synthesise across messy human domains, exercise judgment under ambiguity, build trust across a table, and lead people.</strong> Those are T, Pi, E, M, Comb, and X-shaped skills. The shapes that know enough about enough to know what questions to ask the AI.",
+                "ai_quote": "\"AI doesn't replace T-shaped people. It makes them 10x more powerful — because now they have an I-shaped assistant for every domain they touch.\"",
+                
+                "lvl3_tag": "Level 3",
+                "index_title": "AI Survival Index 🛡️",
+                "chart_title": "AI Survival Index",
+                "chart_subtitle": "Higher = More Resilient. Depth alone no longer protects you.",
+                
+                "ai_label_I": "I-Shaped", "ai_sub_I": "The Deep Diver", "ai_desc_I": "High Risk",
+                "ai_label_T": "T-Shaped", "ai_sub_T": "The Versatile Collaborator", "ai_desc_T": "Strong",
+                "ai_label_Pi": "π-Shaped", "ai_sub_Pi": "The Bridge Builder", "ai_desc_Pi": "Very Strong",
+                "ai_label_E": "E-Shaped", "ai_sub_E": "The Executor Engine", "ai_desc_E": "Very Strong",
+                "ai_label_M": "M-Shaped", "ai_sub_M": "The Overachiever", "ai_desc_M": "Excellent",
+                "ai_label_Comb": "Comb Shaped", "ai_sub_Comb": "The Legendary Unicorn", "ai_desc_Comb": "Max Resilience",
+                "ai_label_X": "X-Shaped", "ai_sub_X": "The Leader", "ai_desc_X": "Near-Immune",
+
+                "lvl4_tag": "Level 4",
+                "lvl4_title": "The Skill Archetypes 🧬",
+                "lvl4_desc": "These aren't personality types. They're not fixed. They're the shape your skills make right now — and the shape you're aiming to grow into.",
+                "punchline_label": "Punchline",
+                
+                "s1_nick": "The Deep Diver",
+                "s1_desc": "One skill. Drilled all the way down.",
+                "s1_story1": "Picture a neurosurgeon at a dinner party. Someone asks what they do. They explain — in loving detail — the specific sub-type of aneurysm they operated on this morning. The table goes quiet. This is the I-shaped person in their natural habitat: <strong>incomprehensibly deep, completely unaware that nobody else is following.</strong> Examples range from sushi master Jiro Ono to brilliant academic researchers like Marie Curie.",
+                "s1_story2": "The I-shape is the oldest career shape in human history. One thing, done to perfection, for life. And for centuries, that was enough. <strong>Then AI arrived and learned to do their one thing. In seconds. For free.</strong>",
+                "s1_punch": "They can spend three hours explaining the exact chemical makeup of the iceberg, but they won't notice the ship is sinking.",
+                "s1_ex1": "Surgeons", "s1_ex2": "Tax Lawyers", "s1_ex3": "Academic Researchers",
+
+                "s2_nick": "The Versatile Collaborator",
+                "s2_desc": "One deep expertise. Enough breadth to be dangerous.",
+                "s2_story1": "The T-shaped person is the MVP (Most Valuable Professional) that every startup founder describes when they say \"we need someone who can wear many hats.\" They mean: someone with a genuine skill, who also doesn't stare blankly when you say \"customer\", \"revenue\", or \"please help us with this email.\"",
+                "s2_story2": "The horizontal bar of the T isn't fluff. It's <strong>the most underrated professional skill there is: the ability to collaborate without being a specialist.</strong> To sit in a room full of engineers and ask the right question. To sit with designers and not break things. McKinsey invented this shape. Tim Brown from IDEO made it famous.",
+                "s2_punch": "The T-shaped chef knows every cuisine but is a world-class expert in pasta. He will absolutely judge your mac & cheese — but he'll do it with empathy and a wine pairing suggestion.",
+                "s2_ex1": "Product Managers", "s2_ex2": "UX Designers", "s2_ex3": "Agile Leaders",
+
+                "s3_nick": "The Bridge Builder",
+                "s3_desc": "Two deep pillars. Where real magic happens.",
+                "s3_story1": "Here's the thing nobody tells you about having two deep skillsets: the value isn't additive. It's <strong>multiplicative.</strong> A lawyer who codes isn't worth a lawyer plus a developer. They're worth 3x either — because they can see the entire system that everyone else only sees half of.",
+                "s3_story2": "Steve Jobs was famously π-shaped before it had a name — possessing deep pillars in calligraphy/design and computer technology. Brian May is a legendary guitarist and an astrophysicist. The intersection is where careers become irreplaceable.",
+                "s3_punch": "A π-shaped person applies for a job posting. They meet 100% of the requirements — and then 80% of another job posting they also spotted. They apply to both. They get both offers.",
+                "s3_ex1": "Full-Stack Devs", "s3_ex2": "Data Engineers", "s3_ex3": "Creative Technologists",
+
+                "s4_nick": "The Overachiever",
+                "s4_desc": "Three deep pillars. Pi's intimidating sibling.",
+                "s4_story1": "The M-shaped person is someone who kept going. They have <strong>three distinct domains of genuine mastery</strong>. This usually takes a decade or more. Christopher Nolan writes, directs, and produces. Think of India's Dr. Homi Bhabha—a world-class physicist, a visionary institution builder, and an international diplomat.",
+                "s4_story2": "The danger of M is maintaining three pillars simultaneously. Real expertise demands continuous feeding. Three of those at once is genuinely hard. But the ones who pull it off? They sit at the intersection of three worlds nobody else even knows are connected.",
+                "s4_punch": "An M-shaped person walks into a meeting about a medical product's legal liability and software architecture. Everyone else brought one specialist. They brought themselves. The meeting is 40 minutes shorter than planned.",
+                "s4_ex1": "CTOs", "s4_ex2": "Lead Architects", "s4_ex3": "Innovation Directors",
+
+                "s5_nick": "The Executor Engine",
+                "s5_desc": "Four horizontal layers. One deep trunk.",
+                "s5_story1": "The E-shape is a different kind of shape — not more pillars of depth, but <strong>four distinct horizontal capabilities</strong> growing from one vertical trunk. The four E's: <strong>Expertise</strong> (deep craft), <strong>Experience</strong> (track record), <strong>Execution</strong> (ability to ship), and <strong>Exploration</strong> (curiosity).",
+                "s5_story2": "Linus Torvalds isn't just an expert coder; he built Linux through relentless execution and community management. Most people have Expertise. Fewer have Experience. Very few have real Execution — the kind where they've actually shipped something significant, led a team through uncertainty, and lived with the consequences.",
+                "s5_punch": "An E-shaped PM is in a meeting where someone says \"we should really explore whether this is viable.\" The E-shaped PM says \"I built a prototype last week. Here are the user test results.\" The meeting ends. A product ships.",
+                "s5_ex1": "VPs of Engineering", "s5_ex2": "Principal Engineers", "s5_ex3": "Operations Leads",
+
+                "s6_nick": "The Legendary Unicorn",
+                "s6_desc": "Many deep pillars. Vast breadth.",
+                "s6_story1": "The Comb is what happens when a T-shaped person keeps growing for twenty years and never stops. It's not a beginner's shape. It's the accumulated result of <strong>genuine curiosity applied relentlessly over decades.</strong> Leonardo da Vinci was Comb-shaped. Rabindranath Tagore was a poet, philosopher, painter, and educationalist.",
+                "s6_story2": "The comb's weakness is recruiters. LinkedIn is built for I-shaped and T-shaped people. A comb's CV reads like a fever dream — artist, engineer, investor, author, all somehow the same person.",
+                "s6_punch": "A comb-shaped person sends their CV. The recruiter reads it. Calls their manager. The manager calls their manager. Three days later, someone creates a new job title specifically for this person. They accept. They immediately start changing things.",
+                "s6_ex1": "Serial Founders", "s6_ex2": "Chief Strategy Officers", "s6_ex3": "Polymaths",
+
+                "s7_nick": "The Leader",
+                "s7_desc": "Craft meets leadership. Strategy meets execution.",
+                "s7_story1": "The X is not a shape of knowledge — it's a shape of <strong>influence.</strong> The two axes are craft depth and leadership depth. Both have to be real. A leader who can't do the work loses the engineers. An engineer who can't lead loses the org. The X-shaped person sits at the cross-section.",
+                "s7_story2": "Satya Nadella is X-shaped. He came up as a deeply technical engineer—but rebuilt Microsoft not by writing code, but by rewriting its culture. Ratan Tata similarly combined deep industrial knowledge with visionary, empathetic leadership. Both axes, at the same time.",
+                "s7_punch": "An X-shaped leader walks into a standup. The engineers respect them because they spotted the architectural flaw before anyone else. The board respects them because they turned that flaw into a strategic pivot. The intern is taking notes so fast their hand is cramping.",
+                "s7_ex1": "CEOs & Founders", "s7_ex2": "CTOs", "s7_ex3": "Directors of Product",
+
+                "lvl5_tag": "Level 5",
+                "lvl5_title": "Evolution Map 🗺️",
+                "lvl5_desc": "Careers are no longer static titles. They are evolving geometries. Follow the path to unlock the next level of AI immunity.",
+
+                "lvl6_tag": "Level 6",
+                "lvl6_title": "Cheat Sheet 🎒",
+                "lvl6_desc": "Tap or hover cards to flip and review the roster.",
+                "tap_flip": "Tap to flip ↺",
+                
+                "cs1_nick": "Specialist", "cs1_desc": "Most vulnerable. AI does your one thing. Urgently need to add a horizontal bar.", "cs1_fix": "Fix: Collaborate",
+                "cs2_nick": "Connector", "cs2_desc": "Solid foundation. Breadth means you can use AI across domains. The startup MVP.", "cs2_fix": "Fix: Add 2nd Pillar",
+                "cs3_nick": "Dual Master", "cs3_desc": "Very strong. Two pillars means two AI amplifiers. The synthesis is fully human.", "cs3_fix": "Fix: Execute",
+                "cs4_nick": "Expander", "cs4_desc": "Execution + Exploration. You get things built and shipped in the real world.", "cs4_fix": "Fix: Build 3rd Pillar",
+                "cs5_nick": "Triple Master", "cs5_desc": "Excellent. Three domains is three angles. Highly rare, hard to maintain.", "cs5_fix": "Fix: Avoid Rust",
+                "cs6_nick": "Unicorn", "cs6_desc": "Maximum resilience. Every tooth gets an AI amplifier. You're a one-person lab.", "cs6_fix": "Goal: Orchestrate",
+                "cs7_nick": "The Leader", "cs7_desc": "Near-immune. Leadership, judgment, and trust-building across humans is the last frontier AI cannot touch.", "cs7_fix": "Status: Apex",
+
+                "lvl7_tag": "Level 7",
+                "lvl7_title": "Self-Discovery 🔍",
+                "lvl7_desc": "One question. Honest answer. If your job disappeared tomorrow, how would you describe what you bring to the next one?",
+                "q_I": "I have one specific expertise that I've gone very deep on.",
+                "q_T": "I have a main skill but I can work across many areas and teams.",
+                "q_Pi": "I genuinely have depth in two or three separate domains.",
+                "q_X": "I lead people and strategy as much as I do the actual craft.",
+                "q_Comb": "I have expertise across so many areas it's hard to explain in one sentence.",
+                "res_title": "You Are",
+                "share_label": "Your personalized share text:",
+                "share_t1": "\"I just discovered my career skill shape is",
+                "share_t2": "The world doesn't just need specialists anymore. What's your shape? Find out here:\"",
+                "btn_copy": "Just Copy Text",
+                "share_tip": "Note: LinkedIn & FB block pre-filled text. We will copy it for you to paste!",
+                
+                "toast_title": "Copied to Clipboard!",
+                "toast_desc": "Paste the text into your post. Social networks block auto-filling!",
+
+                "btn_retake": "↺ Retake Quiz",
+
+                "lvl8_tag": "Level 8: The Final Truth",
+                "final_p1": "The uncomfortable truth is this: most people have never thought about their shape.",
+                "final_p2": "They've thought about their job title. Their salary band. Their industry. But not the actual <span class=\"text-arcade-yellow\">geometry of their knowledge</span> — how deep it goes, how wide it spreads, how many pillars it rests on.",
+                "final_p3": "And in a world where AI is rapidly doing the single-pillar work, the geometry is everything. Not because shapes are a magic career formula, but because they force you to ask the right question: <span class=\"text-arcade-green\">am I building depth, breadth, or both?</span> Am I growing the horizontal bar, or just drilling deeper in the same hole?",
+                "final_quote": "\"The best shapes aren't born.<br>They're built — one deliberate expansion at a time.\"",
+                "final_p4": "You don't have to be a comb by next Tuesday. But you should probably know what shape you are today — and have a rough idea of which direction you're growing in.",
+
+                "footer_title": "Keep Learning, Keep Adapting 🧠",
+                "footer_chai_long": "If you found this guide useful,<br/>support the creator with a tea ☕"
+            },
+            ta: {
+                "float_chai": "பிடித்திருக்கிறதா? தேநீர் வழங்கி ஆதரவளிக்கவும் ☕",
+                "hero_badge1": "விளையாட தயாராகுக 🕹️",
+                "hero_badge2": "தொழில் உத்தி 🗺️",
+                "hero_badge3": "திறன்களைத் திறக்கவும் 🔓",
+                "hero_title_1": "உங்கள்",
+                "hero_title_2": "தொழில் வடிவத்தை",
+                "hero_subtitle": "AI தேர்ந்தெடுப்பதற்கு முன் நீங்கள் தேர்ந்தெடுங்கள்.",
+                "btn_start": "உங்கள் வடிவத்தை அறிய",
+                
+                "setup_tab": "முன்னுரை 📂",
+                "setup_stamp": "மிகவும் ரகசியமானது",
+                "setup_quote_1": "\"நீங்கள் என்ன செய்கிறீர்கள்?\" என்பது தவறான கேள்வி.",
+                "setup_quote_2": "சரியான கேள்வி: \"உங்கள் திறன் வடிவம் என்ன?\"",
+                "setup_p1": "1980களில், மெக்கின்சி (McKinsey) ஒரு சிக்கலை எதிர்கொண்டது. அவர்கள் ஒரு துறையில் மட்டும் நிபுணத்துவம் பெற்றவர்களை வேலைக்கு அமர்த்தினர் — ஆனால் அவர்கள் மற்ற குழுக்களுடன் இணைந்து வேலை செய்யத் தவறியதைக் கண்டனர். எனவே அவர்கள் ஒரு புதிய சொல்லை உருவாக்கினர்: <strong class=\"bg-yellow-200 px-1 border border-yellow-400\">\"T-வடிவ நபர்\" (T-shaped person).</strong> ஒரு துறையில் ஆழமான அறிவும், மற்றவர்களுடன் இணைந்து செயல்படும் அளவுக்கு பரந்த அறிவும் கொண்டவர்.",
+                "setup_p2": "இந்த கருத்து மெல்ல பரவியது. IDEO-வின் டிம் பிரவுன் இதனை பிரபலமாக்கினார். அதன் பிறகு — T என்பது வெறும் ஆரம்பம் தான் என்பது புரியத் தொடங்கியது. இன்னும் பல வடிவங்கள் உள்ளன.",
+                "setup_p3": "இது அவற்றுக்கான முழுமையான வழிகாட்டி. AI ஆதிக்கம் செலுத்தும் இந்த காலத்தில், உங்கள் வடிவத்தை புரிந்துகொள்வது இனி விருப்பமல்ல, கட்டாயம்.",
+
+                "lvl1_tag": "கட்டம் 1",
+                "lvl1_title": "பெரும் மாற்றம் 🤖",
+                "lvl1_desc": "உலகளவில் உண்மையில் என்ன நடக்கிறது என்று பார்ப்போம்.",
+                "stat_1": "தானியங்கி தொழில்நுட்பத்தால் பாதிக்கப்படும் முழுநேர வேலைகள்<br>(Goldman Sachs கணிப்பு)",
+                "stat_2": "மாறவிருக்கும் அடிப்படை வேலைத் திறன்கள்<br>(WEF கணிப்பு)",
+                "stat_3": "AI துணையுடன் உலகளவில் உருவாகும் புதிய வேலைவாய்ப்புகள்<br>(WEF கணிப்பு)",
+                "stat_4": "GenAI மூலம் தானியங்கியாகும் வேலைகளின் சதவீதம்<br>(McKinsey கணிப்பு)",
+                "stat_5": "AI துணையுடன் கிடைக்கும் உற்பத்தித்திறன் உயர்வு<br>(Harvard/BCG)",
+                "stat_6": "உலகளவில் பாதிக்கப்படும் வழக்கமான வேலைகள்<br>(WEF கணிப்பு)",
+
+                "lvl2_tag": "கட்டம் 2",
+                "lvl2_title": "நிபுணர்களை அழிக்கும் இயந்திரம் ⚔️",
+                "ai_vs_1": "நிபுணர்களை அழிக்கும் இயந்திரம்",
+                "ai_vs_2": "மனிதர்களின் கவசம்",
+                "ai_p1": "AI ஒரு நிபுணர்களை வீழ்த்தும் இயந்திரம். அது சட்டத் தேர்வில் தேர்ச்சி பெறும். தோல் புற்றுநோயை மருத்துவர்களை விட சிறப்பாக கண்டறியும். குறியீடு (code) எழுதும், வடிவமைப்புகளை உருவாக்கும். ஒரு துறையில் மட்டும் நிபுணத்துவம் பெற்ற (I-வடிவ) ஒவ்வொருவரும், அவர்களின் வேலையை இலவசமாகவும் வேகமாகவும் செய்யும் ஒரு தொழில்நுட்பத்தை எதிர்கொள்கிறார்கள்.",
+                "ai_p2": "ஆனால் AI-ஆல் செய்ய முடியாதது: <strong>மனித உணர்வுகளைப் புரிந்துகொண்டு முடிவெடுப்பது, குழுவை வழிநடத்துவது, மற்றும் பல துறைகளை இணைப்பது.</strong> இவையே T, Pi, E, M, Comb, மற்றும் X வடிவ திறன்கள். AI-யிடம் என்ன கேள்விகளை கேட்க வேண்டும் என்று தெரிந்த வடிவங்கள்.",
+                "ai_quote": "\"AI, T-வடிவ நபர்களை மாற்றுவதில்லை. அது அவர்களை 10 மடங்கு சக்திவாய்ந்தவர்களாக மாற்றுகிறது — ஏனென்றால் இப்போது அவர்கள் தொடும் ஒவ்வொரு துறைக்கும் ஒரு AI உதவியாளர் இருக்கிறார்.\"",
+                
+                "lvl3_tag": "கட்டம் 3",
+                "index_title": "AI பிழைப்பு குறியீடு 🛡️",
+                "chart_title": "AI பிழைப்பு குறியீடு",
+                "chart_subtitle": "அதிகம் = அதிக பாதுகாப்பு. ஆழம் மட்டுமே இனி உங்களை காப்பாற்றாது.",
+                
+                "ai_label_I": "I-வடிவம்", "ai_sub_I": "ஆழமானவர்", "ai_desc_I": "அதிக ஆபத்து",
+                "ai_label_T": "T-வடிவம்", "ai_sub_T": "பல்துறை இணைப்பாளர்", "ai_desc_T": "வலுவானது",
+                "ai_label_Pi": "π-வடிவம்", "ai_sub_Pi": "பாலம் அமைப்பவர்", "ai_desc_Pi": "மிக வலுவானது",
+                "ai_label_E": "E-வடிவம்", "ai_sub_E": "செயலாக்குபவர்", "ai_desc_E": "மிக வலுவானது",
+                "ai_label_M": "M-வடிவம்", "ai_sub_M": "சாதனையாளர்", "ai_desc_M": "சிறப்பானது",
+                "ai_label_Comb": "Comb வடிவம்", "ai_sub_Comb": "அரிதானவர்", "ai_desc_Comb": "அதிகபட்ச பாதுகாப்பு",
+                "ai_label_X": "X-வடிவம்", "ai_sub_X": "தலைவர்", "ai_desc_X": "முற்றிலும் பாதுகாப்பு",
+
+                "lvl4_tag": "கட்டம் 4",
+                "lvl4_title": "திறன் ஆளுமைகள் 🧬",
+                "lvl4_desc": "இவை ஆளுமை வகைகள் அல்ல. இவை நிலையானவையும் அல்ல. இவை உங்கள் தற்போதைய திறன்களின் வடிவம் — மற்றும் நீங்கள் வளர வேண்டிய வடிவம்.",
+                "punchline_label": "முத்தாய்ப்பு",
+
+                "s1_nick": "ஆழமானவர்",
+                "s1_desc": "ஒரே திறன். மிகவும் ஆழமானது.",
+                "s1_story1": "ஒரு இரவு விருந்தில் ஒரு மூளை அறுவை சிகிச்சை நிபுணரை கற்பனை செய்து பாருங்கள். அவர் இன்று காலை செய்த அறுவை சிகிச்சையின் நுணுக்கங்களை பற்றி ஆழமாக விளக்குகிறார். மற்ற எவருக்கும் அது புரியவில்லை. இதுதான் I-வடிவ நபர்: <strong>மிகவும் ஆழமானவர், ஆனால் மற்றவர்கள் பின்தொடரவில்லை என்பதை உணராதவர்.</strong> ஜிரோ ஓனோ போன்ற சுஷி மேதைகள் முதல் மேரி கியூரி போன்ற ஆராய்ச்சியாளர்கள் வரை இதற்கு உதாரணம்.",
+                "s1_story2": "மனித வரலாற்றின் பழமையான தொழில் வடிவம் I-வடிவம் தான். ஒரு விஷயத்தை மட்டும் வாழ்நாள் முழுவதும் மிகச் சிறப்பாக செய்வது. பல நூற்றாண்டுகளாக அது போதுமானதாக இருந்தது. <strong>ஆனால் இப்போது AI வந்து அவர்களின் அந்த ஒரு வேலையை நொடிகளில், இலவசமாகச் செய்ய கற்றுக்கொண்டுவிட்டது.</strong>",
+                "s1_punch": "பனிப்பாறையின் வேதியியல் அமைப்பை மூன்று மணி நேரம் விளக்குவார்கள், ஆனால் கப்பல் மூழ்குவதை கவனிக்க மாட்டார்கள்.",
+                "s1_ex1": "அறுவை சிகிச்சை நிபுணர்கள்", "s1_ex2": "சட்ட நிபுணர்கள்", "s1_ex3": "ஆராய்ச்சியாளர்கள்",
+
+                "s2_nick": "பன்முக இணைப்பாளர்",
+                "s2_desc": "ஒரு ஆழமான திறன். மற்ற குழுக்களுடன் இணையும் பரந்த அறிவு.",
+                "s2_story1": "T-வடிவ நபர் (MVP) என்பவர், ஸ்டார்ட்அப் நிறுவனர்கள் தேடும் \"பல தொப்பிகளை அணியக்கூடியவர்\" (wear many hats). அதாவது: ஒரு உண்மையான திறனைக் கொண்டவர், அதே சமயம் \"வாடிக்கையாளர்\" அல்லது \"வருவாய்\" பற்றி பேசும்போது குழம்பாதவர்.",
+                "s2_story2": "T-யின் கிடைமட்டக் கோடு (horizontal bar) சாதாரணமானதல்ல. அது <strong>மிகவும் குறைத்து மதிப்பிடப்பட்ட தொழில்முறை திறன்: நிபுராக இல்லாமல் மற்றவர்களுடன் இணைந்து பணியாற்றும் திறன்.</strong> பொறியாளர்கள் நிறைந்த அறையில் அமர்ந்து சரியான கேள்வியைக் கேட்பது. வடிவமைப்பாளர்களுடன் இணைந்து காரியங்களை சாதிப்பது. டிம் பிரவுன் (IDEO) இதை பிரபலமாக்கினார்.",
+                "s2_punch": "T-வடிவ சமையல்காரருக்கு அனைத்து உணவு வகைகளும் தெரியும், ஆனால் பாஸ்தா செய்வதில் அவர் உலகத் தரம் வாய்ந்தவர். உங்கள் சமையலை அவர் மதிப்பிடுவார் — ஆனால் அன்போடு, ஒரு சிறந்த பானத்தையும் பரிந்துரைத்து.",
+                "s2_ex1": "ப்ராடக்ட் மேனேஜர்கள்", "s2_ex2": "UX வடிவமைப்பாளர்கள்", "s2_ex3": "அஜைல் தலைவர்கள்",
+
+                "s3_nick": "பாலம் அமைப்பவர்",
+                "s3_desc": "இரண்டு ஆழமான தூண்கள். இங்குதான் உண்மையான மேஜிக் நடக்கிறது.",
+                "s3_story1": "இரண்டு ஆழமான திறன்களைக் கொண்டிருப்பதன் ரகசியம் இதுதான்: அதன் மதிப்பு கூட்டல் (additive) அல்ல, அது <strong>பெருக்கல் (multiplicative).</strong> குறியீடு (code) எழுதத் தெரிந்த ஒரு வழக்கறிஞரின் மதிப்பு, ஒரு வழக்கறிஞர் + ஒரு டெவலப்பரின் மதிப்பை விட 3 மடங்கு அதிகம் — ஏனென்றால் மற்றவர்கள் பாதியாகப் பார்ப்பதை அவர் முழு அமைப்பாகக் காண முடியும்.",
+                "s3_story2": "ஸ்டீவ் ஜாப்ஸ் (Steve Jobs) தொழில்நுட்பம் மற்றும் வடிவமைப்பை இணைத்த ஒரு சிறந்த π-வடிவ நபர். பிரையன் மே சிறந்த கிட்டார் கலைஞர் மற்றும் வானியற்பியலாளர். இத்தகைய வடிவமே உங்களை ஈடுசெய்ய முடியாதவராக மாற்றும்.",
+                "s3_punch": "ஒரு π-வடிவ நபர் ஒரு வேலைக்கு விண்ணப்பிக்கிறார். அந்த வேலையின் 100% தேவைகளை அவர் பூர்த்தி செய்கிறார் — அதே சமயம் மற்றொரு வேலையின் 80% தேவைகளையும் பூர்த்தி செய்கிறார். இரண்டிற்கும் விண்ணப்பிக்கிறார். இரண்டு வேலைகளும் அவருக்கு கிடைக்கிறது.",
+                "s3_ex1": "ஃபுல்-ஸ்டாக் டெவலப்பர்கள்", "s3_ex2": "டேட்டா இன்ஜினியர்கள்", "s3_ex3": "கிரியேட்டிவ் தொழில்நுட்பவியலாளர்கள்",
+
+                "s4_nick": "சாதனையாளர்",
+                "s4_desc": "மூன்று ஆழமான தூண்கள். Pi-யின் மூத்த சகோதரன்.",
+                "s4_story1": "Pi-வடிவம் போதாது என்று மேலும் தொடர்ந்து கற்றுக் கொண்டவர் தான் M-வடிவ நபர். இவர்களுக்கு <strong>மூன்று வேறுபட்ட துறைகளில் உண்மையான நிபுணத்துவம்</strong> இருக்கும். இதை அடைய பல ஆண்டுகள் ஆகலாம். கிறிஸ்டோபர் நோலன் எழுதுகிறார், இயக்குகிறார், தயாரிக்கிறார். இந்தியாவின் ஹோமி பாபா ஒரு சிறந்த இயற்பியலாளர், நிறுவனங்களை உருவாக்கியவர், மற்றும் இராஜதந்திரி.",
+                "s4_story2": "M-வடிவத்தின் ஆபத்து என்னவென்றால், மூன்று தூண்களையும் ஒரே நேரத்தில் பராமரிப்பது மிகவும் கடினம். ஆனால் இதை சாதிப்பவர்கள்? யாருக்கும் தெரியாத மூன்று உலகங்களின் சந்திப்பில் அவர்கள் இருப்பார்கள்.",
+                "s4_punch": "ஒரு M-வடிவ நபர் மருத்துவத் தயாரிப்பின் சட்டச் சிக்கல் மற்றும் மென்பொருள் கட்டமைப்பு பற்றிய கூட்டத்திற்குச் செல்கிறார். மற்ற அனைவரும் தங்களுக்குத் தெரிந்த ஒரு நிபுணரை அழைத்து வந்தனர். ஆனால் இவர் மட்டுமே மூன்றுமாகச் செயல்படுகிறார். கூட்டம் 40 நிமிடங்கள் முன்னதாகவே முடிகிறது.",
+                "s4_ex1": "CTO-க்கள்", "s4_ex2": "தலைமை கட்டிடக் கலைஞர்கள்", "s4_ex3": "புத்தாக்க இயக்குநர்கள்",
+
+                "s5_nick": "செயலாக்குபவர்",
+                "s5_desc": "நான்கு கிடைமட்ட அடுக்குகள். ஒரு ஆழமான வேர்.",
+                "s5_story1": "E-வடிவம் என்பது முற்றிலும் வித்தியாசமானது — இதில் ஆழமான தூண்கள் இல்லை, மாறாக ஒரு செங்குத்தான வேரிலிருந்து வளரும் <strong>நான்கு கிடைமட்ட திறன்கள்</strong>. அந்த நான்கு E-கள்: <strong>Expertise</strong> (நிபுணத்துவம்), <strong>Experience</strong> (அனுபவம்), <strong>Execution</strong> (செயல்படுத்தும் திறன்), மற்றும் <strong>Exploration</strong> (கண்டுபிடிக்கும் ஆர்வம்).",
+                "s5_story2": "லினஸ் டோர்வால்ட்ஸ் (Linus Torvalds) வெறும் ஒரு நிபுணர் மட்டுமல்ல, லினக்ஸ்-ஐ தனது தொடர்ச்சியான உழைப்பால் (Execution) உலகளவில் கொண்டு சேர்த்தவர். நிபுணத்துவம் (Expertise) பலருக்கும் இருக்கும். ஆனால் மிகச் சிலருக்கே உண்மையான செயல்படுத்தும் திறன் இருக்கும் — அதாவது ஒரு குழுவை வழிநடத்தி ஒரு பொருளை உருவாக்குவது.",
+                "s5_punch": "ஒரு கூட்டத்தில் ஒருவர் \"இது சாத்தியமா என்று நாம் ஆராய வேண்டும்\" என்கிறார். அதற்கு E-வடிவ நபர், \"நான் கடந்த வாரமே ஒரு முன்மாதிரியை (prototype) உருவாக்கிவிட்டேன். அதன் முடிவுகள் இதோ\" என்கிறார். கூட்டம் முடிகிறது. பொருள் தயாராகிறது.",
+                "s5_ex1": "பொறியியல் VP-க்கள்", "s5_ex2": "முதன்மை பொறியாளர்கள்", "s5_ex3": "செயல்பாட்டு தலைவர்கள்",
+
+                "s6_nick": "அரிதானவர்",
+                "s6_desc": "பல ஆழமான தூண்கள். பரந்த அறிவு.",
+                "s6_story1": "ஒரு T-வடிவ நபர் இருபது வருடங்களாக தொடர்ந்து கற்றுக் கொண்டே இருந்தால் உருவாவது தான் Comb (சீப்பு) வடிவம். இது தொடக்க நிலை அல்ல. <strong>பல தசாப்தங்களாக உண்மையான ஆர்வத்துடன் செயல்பட்டதன் விளைவு.</strong> லியோனார்டோ டா வின்சி மற்றும் ரவீந்திரநாத் தாகூர் போன்றவர்கள் இந்த வகையை சேர்ந்தவர்கள்.",
+                "s6_story2": "Comb-வடிவத்தின் பலவீனம் வேலைக்கு ஆட்கள் எடுப்பவர்கள் தான். LinkedIn போன்ற தளங்கள் I மற்றும் T வடிவ நபர்களுக்காக உருவாக்கப்பட்டவை. ஒரு Comb-வடிவ நபரின் CV விசித்திரமாக இருக்கும் — கலைஞர், பொறியாளர், முதலீட்டாளர், எழுத்தாளர் என அனைத்தும் ஒரே நபராக இருப்பார்.",
+                "s6_punch": "ஒரு Comb-வடிவ நபர் தனது CV-யை அனுப்புகிறார். அதை படிக்கும் நபர் தனது மேலாளரை அழைக்கிறார். அவர் தனது மேலாளரை அழைக்கிறார். மூன்று நாட்களுக்குப் பிறகு, இந்த நபருக்காகவே பிரத்யேகமாக ஒரு புதிய வேலை உருவாக்கப்படுகிறது.",
+                "s6_ex1": "தொடர் நிறுவனர்கள்", "s6_ex2": "தலைமை வியூக அதிகாரிகள்", "s6_ex3": "பல்துறை அறிஞர்கள்",
+
+                "s7_nick": "தலைவர்",
+                "s7_desc": "திறமையும் தலைமையும் சந்திக்கும் இடம்.",
+                "s7_story1": "X என்பது அறிவின் வடிவம் அல்ல — அது <strong>ஆளுமையின் (influence)</strong> வடிவம். இதன் இரண்டு அச்சுகள்: திறமையின் ஆழம் மற்றும் தலைமையின் ஆழம். இரண்டும் உண்மையாக இருக்க வேண்டும். வேலை செய்யத் தெரியாத தலைவரை பொறியாளர்கள் மதிக்க மாட்டார்கள். வழிநடத்தத் தெரியாத பொறியாளரால் நிறுவனத்தை நிர்வகிக்க முடியாது.",
+                "s7_story2": "சத்யா நாதெள்ளா (Satya Nadella) ஒரு சிறந்த பொறியாளராக உயர்ந்தார் — ஆனால் மைக்ரோசாஃப்டை அவர் குறியீடு (code) எழுதுவதன் மூலம் மாற்றியமைக்கவில்லை, அதன் கலாச்சாரத்தை மாற்றி அமைத்தார். ரத்தன் டாடாவும் இது போன்ற ஒரு சிறந்த X-வடிவ தலைவர் தான்.",
+                "s7_punch": "ஒரு X-வடிவ தலைவர் கூட்டத்திற்கு வருகிறார். கட்டிடக்கலையில் உள்ள குறையை முதலில் கண்டறிந்ததால் பொறியாளர்கள் அவரை மதிக்கிறார்கள். அந்த குறையை நிறுவனத்தின் வளர்ச்சிக்கு மாற்றியதால் இயக்குநர்கள் அவரை மதிக்கிறார்கள். அவர் சொல்வதை எழுதிக் கொள்ளும் பயிற்சியாளரின் கை வலிக்கிறது.",
+                "s7_ex1": "CEO-க்கள் & நிறுவனர்கள்", "s7_ex2": "CTO-க்கள்", "s7_ex3": "தயாரிப்பு இயக்குநர்கள்",
+
+                "lvl5_tag": "கட்டம் 5",
+                "lvl5_title": "பரிணாம வரைபடம் 🗺️",
+                "lvl5_desc": "தொழில்கள் இனி நிலையானவை அல்ல. அடுத்த நிலைக்கு நீங்கள் திட்டமிட்டு வளர வேண்டும்.",
+
+                "lvl6_tag": "கட்டம் 6",
+                "lvl6_title": "உயிர்வாழ்வதற்கான கையேடு 🎒",
+                "lvl6_desc": "வடிவங்களை புரட்டிப் பார்க்க கார்டுகளைத் தொடவும்.",
+                "tap_flip": "தொடவும் ↺",
+                
+                "cs1_nick": "நிபுணர்", "cs1_desc": "ஆபத்தானது. AI உங்கள் வேலையை எளிதில் செய்யும். கிடைமட்டக் கோடு அவசியம்.", "cs1_fix": "தீர்வு: பிறருடன் இணையுங்கள்",
+                "cs2_nick": "இணைப்பாளர்", "cs2_desc": "வலுவான அடித்தளம். பல துறைகளிலும் AI-யை பயன்படுத்த முடியும்.", "cs2_fix": "தீர்வு: 2-வது தூணை உருவாக்குங்கள்",
+                "cs3_nick": "இரட்டை நிபுணர்", "cs3_desc": "மிகவும் பாதுகாப்பானது. இரண்டு தூண்கள் என்றால் இரண்டு AI உதவியாளர்கள்.", "cs3_fix": "தீர்வு: செயல்படுத்துங்கள்",
+                "cs4_nick": "விரிவாக்குபவர்", "cs4_desc": "செயல்படுத்துதல் + கண்டுபிடித்தல். நிஜ உலகில் பொருள்களை உருவாக்குவீர்கள்.", "cs4_fix": "தீர்வு: 3-வது தூணை உருவாக்குங்கள்",
+                "cs5_nick": "மும்முனை நிபுணர்", "cs5_desc": "சிறப்பானது. மூன்று கோணங்கள். ஆனால் இதை பராமரிப்பது மிகவும் கடினம்.", "cs5_fix": "தீர்வு: திறன்களை புதுப்பிக்கவும்",
+                "cs6_nick": "அரிதானவர்", "cs6_desc": "அதிகபட்ச பாதுகாப்பு. ஒவ்வொரு பல்லுக்கும் ஒரு AI. நீங்கள் ஒரு தனி ஆராய்ச்சி கூடம்.", "cs6_fix": "இலக்கு: வழிநடத்துதல்",
+                "cs7_nick": "தலைவர்", "cs7_desc": "முற்றிலும் பாதுகாப்பானது. தலைமை பண்பையும், மனித நம்பிக்கையையும் AI-ஆல் தொட முடியாது.", "cs7_fix": "நிலை: உச்சம்",
+
+                "lvl7_tag": "கட்டம் 7",
+                "lvl7_title": "உங்களை அறிதல் 🔍",
+                "lvl7_desc": "நேர்மையாக பதிலளிக்கவும். உங்கள் வேலை நாளை போய்விட்டால், உங்கள் அடுத்த வேலைக்கு எதை மூலதனமாக கொண்டு செல்வீர்கள்?",
+                "q_I": "நான் ஒரு குறிப்பிட்ட துறையில் மிக ஆழமாகச் செல்வேன்.",
+                "q_T": "எனது ஒரு முக்கிய திறனைப் பயன்படுத்தி பல குழுக்களை இணைக்கிறேன்.",
+                "q_Pi": "நான் இரண்டு அல்லது மூன்று மாறுபட்ட துறைகளை ஆழமாக இணைக்கிறேன்.",
+                "q_X": "ஒரு தலைவராக நான் அமைப்புகள், உத்திகள் மற்றும் மக்களை ஒருங்கிணைக்கிறேன்.",
+                "q_Comb": "நான் பல ஆழமான தலைப்புகளை இணைத்து பயணிக்கிறேன்.",
+                "res_title": "நீங்கள்",
+                "share_label": "பகிர வேண்டிய வாசகம்:",
+                "share_t1": "\"எனது தொழில் திறன் வடிவம்",
+                "share_t2": "என்பதை இப்போது தான் கண்டறிந்தேன்! 🚀\n\nஉலகிற்கு இனி நிபுணர்கள் மட்டும் போதாது. உங்கள் வடிவம் என்ன? இங்கே கண்டறியவும்:\"",
+                "btn_copy": "வாசகத்தை நகலெடு",
+                "share_tip": "குறிப்பு: LinkedIn & Facebook-இல் தானாக வாசகம் வராது. நாங்களே உங்களுக்காக நகலெடுத்து விடுவோம் (Copied), நீங்கள் Paste செய்தால் மட்டும் போதும்!",
+                
+                "toast_title": "நகலெடுக்கப்பட்டது!",
+                "toast_desc": "வாசகத்தை Paste செய்யவும். தானாக வாசகம் வருவதை சமூக வலைதளங்கள் தடுக்கின்றன!",
+
+                "btn_retake": "↺ மீண்டும் விளையாடு",
+
+                "lvl8_tag": "கட்டம் 8: இறுதி உண்மை",
+                "final_p1": "உண்மையைச் சொல்வதென்றால்: பெரும்பாலானோர் தங்கள் திறனின் வடிவத்தைப் பற்றி சிந்திப்பதில்லை.",
+                "final_p2": "தங்கள் பதவி, சம்பளம், துறையைப் பற்றி மட்டுமே சிந்திக்கிறார்கள். அறிவின் வடிவம் எவ்வளவு ஆழமானது, எவ்வளவு பரந்திருக்கிறது என்று யோசிப்பதில்லை.",
+                "final_p3": "AI ஒற்றைத் தூண் வேலைகளைச் செய்யும் உலகில், வடிவமே எல்லாம். இது ஒரு மந்திரம் என்பதற்காக அல்ல, நீங்கள் எந்த திசையில் பயணிக்கிறீர்கள் என்ற சரியான கேள்வியை இது கேட்க வைக்கிறது.",
+                "final_quote": "\"சிறந்த வடிவங்கள் பிறப்பதில்லை, அவை படிப்படியாக கட்டமைக்கப்படுகின்றன.\"",
+                "final_p4": "நீங்கள் அடுத்த வாரமே சீப்பு (Comb) வடிவமாக மாற வேண்டியதில்லை. ஆனால் இன்று உங்கள் வடிவம் என்ன, நாளை எந்த திசையில் வளரப் போகிறீர்கள் என்பது உங்களுக்குத் தெரிந்திருக்க வேண்டும்.",
+
+                "footer_title": "தொடர்ந்து கற்றுக்கொள்ளுங்கள், தொடர்ந்து தகவமைத்துக்கொள்ளுங்கள் 🧠",
+                "footer_chai_long": "இது உங்கள் தொழிலை திட்டமிட உதவினால்,<br>உருவாக்கியவருக்கு ஒரு தேநீர் வழங்கி ஆதரவளியுங்கள்! ☕"
+            }
+        };
+
+        window.setLang = function(lang) {
+            window.currentLang = lang;
+            document.documentElement.lang = lang;
+            
+            const btnEn = document.getElementById('btn-en');
+            const btnTa = document.getElementById('btn-ta');
+            
+            if (btnEn && btnTa) {
+                if (lang === 'en') {
+                    btnEn.className = "px-3 py-1.5 font-black text-xs md:text-sm rounded-full transition-colors bg-arcade-pink text-arcade-dark";
+                    btnTa.className = "px-3 py-1.5 font-black text-xs md:text-sm rounded-full transition-colors hover:bg-slate-100 text-slate-400";
+                } else {
+                    btnTa.className = "px-3 py-1.5 font-black text-xs md:text-sm rounded-full transition-colors bg-arcade-pink text-arcade-dark";
+                    btnEn.className = "px-3 py-1.5 font-black text-xs md:text-sm rounded-full transition-colors hover:bg-slate-100 text-slate-400";
+                }
+            }
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key]) {
+                    el.innerHTML = i18n[lang][key];
+                }
+            });
+
+            // Update toast translations dynamically if they change language after seeing it
+            const toastTitle = document.getElementById('toast-title');
+            const toastDesc = document.getElementById('toast-desc');
+            if (toastTitle && i18n[lang]['toast_title']) toastTitle.innerText = i18n[lang]['toast_title'];
+            if (toastDesc && i18n[lang]['toast_desc']) toastDesc.innerText = i18n[lang]['toast_desc'];
+            
+            // Re-render Dynamic AI Cards if container exists
+            const container = document.getElementById('ai-grid-container');
+            if (container && container.innerHTML.trim() !== '') {
+                // If it's already rendered, update the specific strings
+                document.querySelectorAll('[data-i18n^="ai_"]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (i18n[lang] && i18n[lang][key]) {
+                        el.innerHTML = i18n[lang][key];
+                    }
+                });
+            }
+        };
+
+        // Init language safely after DOM load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => setLang('en'));
+        } else {
+            setLang('en');
+        }
+    </script>
+</body>
+</html>
