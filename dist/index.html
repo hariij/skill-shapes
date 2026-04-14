@@ -1817,40 +1817,71 @@
 
     <script>
     (function(){
-    var UPI='9840805248@okbizaxis';
-    window.openChaiPopup=function(){
-        var o=document.getElementById('chai-overlay');
-        o.style.display='flex';
-        setTimeout(function(){
-        o.classList.remove('opacity-0');
-        var p=document.getElementById('chai-popup');
-        p.classList.remove('opacity-0','translate-y-6','scale-95');
-        },10);
-    };
-    window.closeChaiPopup=function(){
-        var o=document.getElementById('chai-overlay');
-        var p=document.getElementById('chai-popup');
-        o.classList.add('opacity-0');
-        p.classList.add('opacity-0','translate-y-6','scale-95');
-        setTimeout(function(){o.style.display='none';},300);
-    };
-    window.handleChaiOverlay=function(e){
-        if(e.target===document.getElementById('chai-overlay'))closeChaiPopup();
-    };
-    window.chaiPay=function(amt){
-        window.location.href='upi://pay?pa='+UPI+'&pn=Hari%20Pravin&am='+amt+'&cu=INR&tn=SupportSkillShapes';
-    };
-    window.chaiCustomInput=function(){
-        var v=parseInt(document.getElementById('chai-custom-val').value);
-        var btn=document.getElementById('chai-custom-btn');
-        btn.disabled=!(v>0);
-        btn.style.opacity=(v>0)?'1':'0.35';
-        btn.style.cursor=(v>0)?'pointer':'not-allowed';
-    };
-    window.chaiPayCustom=function(){
-        var v=parseInt(document.getElementById('chai-custom-val').value);
-        if(v>0)chaiPay(v);
-    };
+        var UPI='9840805248@okbizaxis';
+        
+        window.openChaiPopup=function(){
+            var o=document.getElementById('chai-overlay');
+            o.style.display='flex';
+            setTimeout(function(){
+                o.classList.remove('opacity-0');
+                var p=document.getElementById('chai-popup');
+                p.classList.remove('opacity-0','translate-y-6','scale-95');
+            },10);
+        };
+        
+        window.closeChaiPopup=function(){
+            var o=document.getElementById('chai-overlay');
+            var p=document.getElementById('chai-popup');
+            o.classList.add('opacity-0');
+            p.classList.add('opacity-0','translate-y-6','scale-95');
+            setTimeout(function(){o.style.display='none';},300);
+        };
+        
+        window.handleChaiOverlay=function(e){
+            if(e.target===document.getElementById('chai-overlay'))closeChaiPopup();
+        };
+
+        // --- UPDATED PAYMENT ROUTING FUNCTION ---
+        window.chaiPay = function(amt) {
+            var params = 'pa=' + UPI + '&pn=Hari%20Pravin&am=' + amt + '&cu=INR&tn=SupportSkillShapes';
+            var finalUrl = '';
+            
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            var isAndroid = /Android/.test(navigator.userAgent);
+
+            if (isAndroid) {
+                // Bulletproof Android intent: forces the clean OS app chooser and prevents Chrome errors
+                finalUrl = 'intent://pay?' + params + '#Intent;scheme=upi;end';
+            } else if (isIOS) {
+                // Forces Google Pay on iOS, bypassing Jupiter/WhatsApp completely.
+                // Note: If the user doesn't have GPay installed, nothing will happen.
+                // If you prefer to let iOS pick Jupiter/PhonePe, change this back to 'upi://pay?'
+                finalUrl = 'gpay://upi/pay?' + params; 
+            } else {
+                // Fallback for desktop or unknown OS
+                finalUrl = 'upi://pay?' + params;
+            }
+
+            // The Anchor Hack: Bypasses browser security blocks by simulating a real click
+            var link = document.createElement('a');
+            link.href = finalUrl;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+        window.chaiCustomInput=function(){
+            var v=parseInt(document.getElementById('chai-custom-val').value);
+            var btn=document.getElementById('chai-custom-btn');
+            btn.disabled=!(v>0);
+            btn.style.opacity=(v>0)?'1':'0.35';
+            btn.style.cursor=(v>0)?'pointer':'not-allowed';
+        };
+        
+        window.chaiPayCustom=function(){
+            var v=parseInt(document.getElementById('chai-custom-val').value);
+            if(v>0)chaiPay(v);
+        };
     })();
     </script>
 </body>
